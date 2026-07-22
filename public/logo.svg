@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="VONE Sound Solutions">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#1a0a12"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </radialGradient>
+  </defs>
+  <circle cx="200" cy="200" r="196" fill="url(#g)" stroke="#C21A5A" stroke-width="3"/>
+  <text x="50%" y="46%" text-anchor="middle" font-family="Inter, sans-serif" font-size="120" font-weight="700" letter-spacing="-4">
+    <tspan fill="#C21A5A">V</tspan><tspan fill="#ffffff">ONE</tspan>
+  </text>
+  <text x="50%" y="60%" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" letter-spacing="10" fill="#C21A5A">SOUND SOLUTIONS</text>
+  <text x="50%" y="70%" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" letter-spacing="4" fill="#8A8A8A">POWERED BY VOID ACOUSTIC</text>
+</svg>
