@@ -21,11 +21,39 @@ Built to feel like the work of a top-flight studio — cinematic, editorial, dar
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000
-npm run build && npm run start   # production
+npm run dev       # http://localhost:3000
+npm run preview   # build + serve the static output locally
 ```
 
 > Requires Node 18.17+.
+
+## Deployment
+
+The site is a **fully static export** (`output: "export"` in `next.config.mjs`) — every route is
+prerendered, so it deploys to any static host with no server, no adapter and no edge functions.
+`npm run build` emits the whole site into **`out/`** (~10 MB including the hero video).
+
+### Cloudflare Pages (recommended — auto-deploys on every push)
+
+Connect this GitHub repo in the Cloudflare dashboard with these settings:
+
+| Setting | Value |
+| --- | --- |
+| Framework preset | **None** (or "Next.js (Static HTML Export)") |
+| Build command | `npm run build` |
+| Build output directory | `out` |
+| Node version | `20` (env var `NODE_VERSION=20`) |
+
+Or deploy straight from the CLI once `wrangler` is authenticated:
+
+```bash
+npm run deploy:cf
+```
+
+### Vercel
+
+Also supported as-is (`vercel --prod`). Currently live at
+<https://vone-sound-solutions.vercel.app>.
 
 ## Architecture
 

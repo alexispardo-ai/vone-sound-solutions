@@ -2,12 +2,14 @@
   "name": "vone-sound-solutions",
   "version": "1.0.0",
   "private": true,
-  "description": "VONE Sound Solutions — International event technology, sound, lighting, LED & broadcast.",
+  "description": "VONE · Vibrational One — Official Void Acoustics Premium Partner for Spain & Portugal. Sound, lighting, LED and event production.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "npx serve out",
+    "lint": "next lint",
+    "preview": "npm run build && npx serve out",
+    "deploy:cf": "npm run build && npx wrangler pages deploy out --project-name=vone-sound-solutions"
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
