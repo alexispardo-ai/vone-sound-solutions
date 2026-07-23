@@ -1,0 +1,10 @@
+# Cloudflare Workers — static assets only (no Worker script needed).
+# `npm run build` emits the static export into ./out, and `npx wrangler deploy`
+# uploads that directory as the site's assets.
+name = "vone-sound-solutions"
+compatibility_date = "2026-07-22"
+
+[assets]
+directory = "./out"
+# Serve the exported 404 page for unknown routes.
+not_found_handling = "404-page"
