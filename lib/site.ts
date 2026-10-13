@@ -20,9 +20,9 @@ export const SITE = {
   // Assumed until the definitive domain is live — update when registered.
   domain: "https://vibrationalone.com",
   email: "jose.hermosin@vibrationalone.com",
-  phone: "+34 664 196 158",
-  phoneHref: "tel:+34664196158",
-  whatsapp: "https://wa.me/34664196158",
+  phone: "+34 666 753 484",
+  phoneHref: "tel:+34666753484",
+  whatsapp: "https://wa.me/34666753484",
   address: "C. Montevideo, 16 · Cruz de Humilladero · 29006 Málaga",
   mapsUrl:
     "https://www.google.com/maps/dir//C.+Montevideo,+16,+Cruz+de+Humilladero,+29006+M%C3%A1laga/@36.7132672,-4.4498944,14z",
