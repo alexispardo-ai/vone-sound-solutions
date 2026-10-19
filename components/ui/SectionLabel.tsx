@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { viewportOnce } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
-/** Small eyebrow label with an animated signal line — used to open each section. */
+/** Small eyebrow label with an animated signal line, used to open each section. */
 export default function SectionLabel({
   children,
   className,

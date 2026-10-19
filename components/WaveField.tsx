@@ -5,7 +5,7 @@ import * as THREE from "three";
 
 /**
  * A lightweight Three.js "audio wave" field for the hero backdrop.
- * A grid of points ripples like a soundfield — on-brand for an audio company,
+ * A grid of points ripples like a soundfield, on-brand for an audio company,
  * and cheap enough to run smoothly on the hero without a physics/particle library.
  */
 export default function WaveField() {

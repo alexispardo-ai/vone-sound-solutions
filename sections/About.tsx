@@ -52,7 +52,7 @@ export default function About() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/about.jpg"
-              alt="VONE — sistema Void en directo ante el público"
+              alt="VONE, sistema Void en directo ante el público"
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover"
             />

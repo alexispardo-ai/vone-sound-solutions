@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Logo from "./Logo";
 import MagneticButton from "./ui/MagneticButton";
@@ -16,6 +17,10 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
   const { lang, ui } = useLanguage();
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  // On the home page, anchors smooth-scroll in place; elsewhere they go home first.
+  const anchor = (href: string) => (isHome ? href : `/${href}`);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -45,7 +50,7 @@ export default function Navbar() {
             scrolled && "glass px-6 py-3"
           )}
         >
-          <Link href="#top" aria-label="VONE home" data-cursor="Top">
+          <Link href={isHome ? "#top" : "/"} aria-label="VONE home" data-cursor="Top">
             <Logo />
           </Link>
 
@@ -53,18 +58,25 @@ export default function Navbar() {
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
-                href={link.href}
+                href={anchor(link.href)}
                 className="group relative text-sm tracking-tight text-chalk-muted transition-colors hover:text-white"
               >
                 {pick(link.label, lang)}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-signal transition-all duration-500 ease-signal group-hover:w-full" />
               </Link>
             ))}
+            <Link
+              href="/blog"
+              className="group relative text-sm tracking-tight text-chalk-muted transition-colors hover:text-white"
+            >
+              {ui.nav.blog}
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-signal transition-all duration-500 ease-signal group-hover:w-full" />
+            </Link>
           </nav>
 
           <div className="hidden items-center gap-4 lg:flex">
             <LanguageToggle />
-            <MagneticButton href="#contact" variant="solid" className="px-6 py-3" cursor="Talk">
+            <MagneticButton href={anchor("#contact")} variant="solid" className="px-6 py-3" cursor="Talk">
               {ui.nav.cta}
             </MagneticButton>
           </div>
@@ -109,7 +121,7 @@ export default function Navbar() {
                   transition={{ delay: 0.1 + i * 0.07, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <Link
-                    href={link.href}
+                    href={anchor(link.href)}
                     onClick={() => setOpen(false)}
                     className="block py-2 font-display text-5xl font-semibold tracking-tightest text-white"
                   >
@@ -117,8 +129,21 @@ export default function Navbar() {
                   </Link>
                 </motion.div>
               ))}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 + NAV_LINKS.length * 0.07, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <Link
+                  href="/blog"
+                  onClick={() => setOpen(false)}
+                  className="block py-2 font-display text-5xl font-semibold tracking-tightest text-white"
+                >
+                  {ui.nav.blog}
+                </Link>
+              </motion.div>
               <div className="mt-8 flex items-center gap-4">
-                <MagneticButton href="#contact" onClick={() => setOpen(false)}>
+                <MagneticButton href={anchor("#contact")} onClick={() => setOpen(false)}>
                   {ui.nav.cta}
                 </MagneticButton>
                 <LanguageToggle />

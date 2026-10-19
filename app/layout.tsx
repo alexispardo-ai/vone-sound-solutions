@@ -5,10 +5,12 @@ import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 import ScrollProgress from "@/components/ScrollProgress";
 import { LanguageProvider } from "@/components/LanguageProvider";
+import Navbar from "@/components/Navbar";
+import Footer from "@/sections/Footer";
 import { SITE } from "@/lib/site";
 
 const SITE_DESCRIPTION =
-  "VONE · Vibrational One — Partner Premium Oficial de Void Acoustics para España y Portugal. Renting e instalación de sistemas de sonido Void Incubus, Arclite y Nexus para festivales, eventos, clubs y restaurantes.";
+  "VONE · Vibrational One, Partner Premium Oficial de Void Acoustics en España y Portugal. Alquiler e instalación de sistemas de sonido Void Incubus, Arclite y Nexus para festivales, eventos, clubs y restaurantes.";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,8 +29,8 @@ const display = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.domain),
   title: {
-    default: `${SITE.name} · ${SITE.legalName} — ${SITE.tagline}`,
-    template: `%s — ${SITE.name}`,
+    default: `${SITE.name} · ${SITE.legalName} · ${SITE.tagline}`,
+    template: `%s · ${SITE.name}`,
   },
   description: SITE_DESCRIPTION,
   applicationName: SITE.name,
@@ -52,13 +54,13 @@ export const metadata: Metadata = {
     alternateLocale: "en_GB",
     url: SITE.domain,
     siteName: SITE.name,
-    title: `${SITE.name} · ${SITE.legalName} — ${SITE.tagline}`,
+    title: `${SITE.name} · ${SITE.legalName} · ${SITE.tagline}`,
     description: SITE_DESCRIPTION,
-    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: `${SITE.name} — ${SITE.tagline}` }],
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: `${SITE.name} · ${SITE.tagline}` }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} — ${SITE.tagline}`,
+    title: `${SITE.name} · ${SITE.tagline}`,
     description: SITE_DESCRIPTION,
     images: ["/og.jpg"],
   },
@@ -115,7 +117,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LanguageProvider>
           <CustomCursor />
           <ScrollProgress />
-          <SmoothScroll>{children}</SmoothScroll>
+          <SmoothScroll>
+            <Navbar />
+            {children}
+            <Footer />
+          </SmoothScroll>
         </LanguageProvider>
       </body>
     </html>

@@ -74,7 +74,7 @@ export default function Work() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={`/images/${item.id}.jpg`}
-                    alt={`${item.title} — ${item.system}`}
+                    alt={`${item.title}, ${item.system}`}
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover grayscale-[0.15] transition-transform duration-[1.2s] ease-signal group-hover:scale-105"
                   />

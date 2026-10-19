@@ -29,7 +29,7 @@ export default function Hero() {
       <motion.div style={{ y, scale }} className="absolute inset-0">
         {/*
           Base layer: drop a cinematic loop at /public/videos/hero.mp4 and it plays here.
-          Until then, the poster image (a Void festival still) is shown — so the hero
+          Until then, the poster image (a Void festival still) is shown, so the hero
           looks finished with or without the video.
         */}
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}

@@ -8,7 +8,7 @@ import { pick } from "@/lib/i18n";
 import { viewportOnce, wordReveal, stagger } from "@/lib/motion";
 
 /**
- * Brand manifesto — VONE's own real marketing lines, set as oversized
+ * Brand manifesto, VONE's own real marketing lines, set as oversized
  * statements. Honest by construction (their words), and more distinctive
  * than invented testimonials for an emerging company.
  */

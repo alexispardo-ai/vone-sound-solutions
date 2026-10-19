@@ -17,7 +17,7 @@ export const SITE = {
     en: "Official Void Premium Partner · Spain & Portugal",
   } as L,
   tagline: "Feel The Frequency",
-  // Assumed until the definitive domain is live — update when registered.
+  // Assumed until the definitive domain is live; update when registered.
   domain: "https://vibrationalone.com",
   email: "jose.hermosin@vibrationalone.com",
   phone: "+34 666 753 484",
@@ -56,8 +56,8 @@ export const SERVICES: Service[] = [
     index: "01",
     title: { es: "Rental Void", en: "Void Rental" },
     summary: {
-      es: "Alquiler de sistemas Void para conciertos, giras, festivales y eventos corporativos y privados. El sonido que se ve y se siente, montado por nuestro equipo.",
-      en: "Void system rental for concerts, tours, festivals and corporate or private events — sound you can see and feel, deployed by our own crew.",
+      es: "Alquiler de sistemas Void para conciertos, giras, festivales y eventos corporativos y privados. Lo llevamos y lo montamos nosotros.",
+      en: "Void system rental for concerts, tours, festivals and corporate or private events. We bring it and set it up ourselves.",
     },
     tags: {
       es: ["Live Events", "Touring", "Festivales"],
@@ -82,8 +82,8 @@ export const SERVICES: Service[] = [
     index: "03",
     title: { es: "Gestión de Equipamiento", en: "Equipment Management" },
     summary: {
-      es: "Preparación, transporte y mantenimiento del sistema. Cada componente sale probado y listo para rendir al máximo.",
-      en: "Prep, transport and maintenance of the rig. Every component ships tested and ready to perform at its peak.",
+      es: "Preparación, transporte y mantenimiento del equipo. Todo sale probado y listo para funcionar.",
+      en: "Prep, transport and maintenance of the rig. Everything ships tested and ready to go.",
     },
     tags: {
       es: ["Prep", "Logística", "Mantenimiento"],
@@ -108,8 +108,8 @@ export const SERVICES: Service[] = [
     index: "05",
     title: { es: "Escenografía & Deco", en: "Scenography & Decor" },
     summary: {
-      es: "Escenografía y decoración que convierten el espacio en experiencia — coherente con la estética escultural de los sistemas Void.",
-      en: "Set design and decor that turn a space into an experience — coherent with Void's sculptural aesthetic.",
+      es: "Escenografía y decoración para que el espacio acompañe al sonido, en la misma línea que los equipos Void.",
+      en: "Set design and decor so the space matches the sound, in the same line as the Void rigs.",
     },
     tags: {
       es: ["Escenografía", "Decoración", "Ambiente"],
@@ -134,8 +134,8 @@ export const SERVICES: Service[] = [
     index: "07",
     title: { es: "Iluminación & Proyecciones", en: "Lighting & Projection" },
     summary: {
-      es: "Diseño de iluminación, lighting de espectáculo y proyecciones que dan forma a la emoción del evento.",
-      en: "Lighting design, show lighting and projection that shape the emotion of the event.",
+      es: "Diseño de iluminación, lighting de espectáculo y proyecciones para que el evento entre también por los ojos.",
+      en: "Lighting design, show lighting and projection so the event lands visually too.",
     },
     tags: {
       es: ["Lighting", "Diseño", "Proyecciones"],
@@ -188,46 +188,46 @@ export const STATS: { value: number; suffix: string; label: L }[] = [
   { value: 6, suffix: "+", label: { es: "Producciones en directo", en: "Live productions" } },
 ];
 
-/** The three Void systems VONE deploys — grounded in real product facts. */
+/** The three Void systems VONE deploys, with real product specs. */
 export const SYSTEMS: { name: string; kind: L; body: L }[] = [
   {
     name: "Incubus",
     kind: { es: "Sistema insignia · gran formato", en: "Flagship · large format" },
     body: {
-      es: "Sistema horn-loaded de 5 vías con diseño escultural: Air Array de medios-agudos, subgraves Hyperfold (4×15\") e Incubus Sub (3×21\"). Salida extrema y presencia visual para festivales y grandes producciones.",
-      en: "A sculptural 5-way horn-loaded system: Air Array mid-highs, Hyperfold subs (4×15\") and Incubus Sub (3×21\"). Extreme output and visual presence for festivals and large productions.",
+      es: "Sistema horn-loaded de 5 vías: Air Array de medios-agudos, subgraves Hyperfold (4×15\") e Incubus Sub (3×21\"). Mucha pegada y presencia en escena, para festivales y grandes producciones.",
+      en: "A 5-way horn-loaded system: Air Array mid-highs, Hyperfold subs (4×15\") and Incubus Sub (3×21\"). Huge output and real presence on stage, for festivals and large productions.",
     },
   },
   {
     name: "Arclite",
     kind: { es: "Formato medio · versátil", en: "Mid format · versatile" },
     body: {
-      es: "Potencia y definición Void en un formato ágil para eventos medianos, salas y producciones que exigen calidad sin renunciar a la logística.",
-      en: "Void's power and definition in an agile format for mid-size events, rooms and productions that demand quality without logistical compromise.",
+      es: "Potencia y definición Void en un formato más manejable, para eventos medianos y salas donde no quieres cargar con un sistema enorme.",
+      en: "Void's power and definition in a more manageable format, for mid-size events and rooms where you don't want to haul a huge system.",
     },
   },
   {
     name: "Nexus",
     kind: { es: "Integración · espacios fijos", en: "Integration · fixed spaces" },
     body: {
-      es: "Pensado para instalación permanente en clubs, restaurantes y negocios: sonido de referencia con la estética Void integrada en el espacio.",
-      en: "Built for permanent install in clubs, restaurants and venues: reference sound with Void's aesthetic embedded in the space.",
+      es: "Para instalación permanente en clubs, restaurantes y negocios: buen sonido con la estética Void integrada en el local.",
+      en: "For permanent install in clubs, restaurants and venues: great sound with Void's look built into the space.",
     },
   },
 ];
 
 export const PROCESS: { step: string; title: L; body: L }[] = [
-  { step: "01", title: { es: "Escucha", en: "Discovery" }, body: { es: "Entendemos el espacio, el público y la ambición del evento antes de proponer nada.", en: "We understand the space, the audience and the ambition before proposing anything." } },
+  { step: "01", title: { es: "Escucha", en: "Discovery" }, body: { es: "Vemos el espacio, el público y lo que buscas antes de proponer nada.", en: "We look at the space, the audience and what you're after before proposing anything." } },
   { step: "02", title: { es: "Diseño", en: "Design" }, body: { es: "Diseño acústico y visual del sistema Void a medida del proyecto.", en: "Acoustic and visual design of the Void system, tailored to the project." } },
   { step: "03", title: { es: "Preparación", en: "Prep" }, body: { es: "Equipamiento probado, cableado y logística resuelta antes del montaje.", en: "Gear tested, wired and logistics solved before load-in." } },
-  { step: "04", title: { es: "Montaje", en: "Deploy" }, body: { es: "Instalación y calibración in situ para que el sistema rinda al máximo en la sala.", en: "On-site install and calibration so the system performs at its peak in the room." } },
+  { step: "04", title: { es: "Montaje", en: "Deploy" }, body: { es: "Instalación y calibración in situ para que suene bien en esa sala concreta.", en: "On-site install and calibration so it sounds right in that specific room." } },
   { step: "05", title: { es: "Directo", en: "Live" }, body: { es: "Operación y soporte durante el evento. Potencia estable, sonido impecable.", en: "Operation and support throughout the event. Stable power, flawless sound." } },
 ];
 
 export const MANIFESTO: L<string>[] = [
   { es: "Somos los únicos en traer Void Incubus a España y Portugal.", en: "We're the only ones bringing Void Incubus to Spain and Portugal." },
   { es: "Sonido que se ve y se siente.", en: "Sound you can see and feel." },
-  { es: "Potencia, definición y una estética que no deja indiferente.", en: "Power, definition and an aesthetic no one ignores." },
+  { es: "Si entra por los oídos, también tiene que entrar por los ojos.", en: "If it hits your ears, it should hit your eyes too." },
 ];
 
 export const CLIENTS = [

@@ -1,6 +1,6 @@
 import type { Variants } from "framer-motion";
 
-/** Shared premium easing curve — expo-out feel. */
+/** Shared premium easing curve, expo-out feel. */
 export const EASE = [0.16, 1, 0.3, 1] as const;
 export const EASE_SMOOTH = [0.22, 1, 0.36, 1] as const;
 

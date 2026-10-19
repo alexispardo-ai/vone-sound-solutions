@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * Services as an interactive editorial list. Hovering a row lifts it, reveals
- * its summary + tags, and slides a signal-coloured index marker into view —
+ * its summary + tags, and slides a signal-coloured index marker into view ,
  * a "list that behaves like cards" pattern that feels premium and stays fast.
  */
 export default function Services() {
