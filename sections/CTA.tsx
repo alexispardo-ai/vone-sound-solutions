@@ -80,6 +80,19 @@ export default function CTA() {
           >
             {SITE.address}
           </a>
+          <a
+            href="https://www.instagram.com/vone.void/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-flex items-center gap-2 text-signal-soft transition-colors hover:text-white"
+          >
+            <svg aria-hidden viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
+            @vone.void
+          </a>
         </motion.div>
       </div>
     </section>

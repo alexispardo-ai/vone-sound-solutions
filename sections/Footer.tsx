@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Logo from "@/components/Logo";
 import { useLanguage } from "@/components/LanguageProvider";
 import { SITE, NAV_LINKS } from "@/lib/site";
 import { pick } from "@/lib/i18n";
@@ -14,11 +13,14 @@ export default function Footer() {
       <div className="container-editorial">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
-            <Logo className="text-2xl" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo-full.png"
+              alt="VONE · Vibrational One · Sound Solutions · Powered by VOID Acoustic"
+              className="w-[220px] max-w-full select-none"
+              draggable={false}
+            />
             <p className="mt-6 max-w-sm leading-relaxed text-chalk-dim">{ui.about.p1}</p>
-            <p className="mt-6 text-xs uppercase tracking-[0.28em] text-chalk-dim">
-              {SITE.poweredBy}
-            </p>
           </div>
 
           <div className="md:col-span-3 md:col-start-7">

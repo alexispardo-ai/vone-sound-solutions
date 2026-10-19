@@ -1,24 +1,18 @@
 import { cn } from "@/lib/utils";
 
 /**
- * VONE wordmark, rebuilt as clean type so it stays crisp at any size and
- * inherits currentColor. The circular photographic badge (the supplied logo)
- * lives in /public/logo.png and is used in the footer / social contexts.
+ * VONE wordmark, using the real brand logo (the "V ONE" mark, transparent
+ * background so it sits cleanly on the dark nav and glass header).
+ * Height is controlled via className (e.g. h-6, h-7).
  */
 export default function Logo({ className }: { className?: string }) {
   return (
-    <span
-      className={cn(
-        "inline-flex items-baseline font-display text-xl font-semibold tracking-tightest",
-        className
-      )}
-      aria-label="VONE · Vibrational One"
-    >
-      <span className="text-signal">V</span>
-      <span className="text-current">ONE</span>
-      <span className="ml-2 hidden text-[0.5rem] font-medium uppercase tracking-[0.3em] text-chalk-dim sm:inline">
-        Vibrational&nbsp;One
-      </span>
-    </span>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/logo-wordmark.png"
+      alt="VONE · Vibrational One"
+      className={cn("h-6 w-auto select-none md:h-7", className)}
+      draggable={false}
+    />
   );
 }

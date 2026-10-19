@@ -168,11 +168,9 @@ export type CaseStudy = {
 
 export const CASE_STUDIES: CaseStudy[] = [
   { id: "manawa", title: "Manawa Festival", client: "Manawa Festival", categoryKey: "festival", category: { es: "Festival", en: "Festival" }, system: "Void Incubus" },
-  { id: "fullnes", title: "Fullnes Festival", client: "Fullnes Festival", categoryKey: "festival", category: { es: "Festival", en: "Festival" }, system: "Void Incubus" },
-  { id: "ameba", title: "Ameba Festival", client: "Ameba Festival", categoryKey: "festival", category: { es: "Festival", en: "Festival" }, system: "Void Incubus" },
+  { id: "floridance", title: "Floridance Festival", client: "Floridance Festival", categoryKey: "festival", category: { es: "Festival", en: "Festival" }, system: "Void Incubus" },
+  { id: "retrohalloween", title: "Retro Halloween", client: "RaveArt", categoryKey: "private", category: { es: "Evento Privado", en: "Private Event" }, system: "Arclite" },
   { id: "ppm", title: "Aniversario P.P.M.", client: "P.P.M. Events", categoryKey: "private", category: { es: "Evento Privado", en: "Private Event" }, system: "Arclite" },
-  { id: "skizo-aniv", title: "Aniversario Skizodelic Mind", client: "Skizodelic Mind Crew", categoryKey: "private", category: { es: "Evento Privado", en: "Private Event" }, system: "Arclite" },
-  { id: "skizo-party", title: "Private Party · Skizodelic Mind", client: "Skizodelic Mind Crew", categoryKey: "private", category: { es: "Evento Privado", en: "Private Event" }, system: "Nexus" },
 ];
 
 export const WORK_FILTERS: { key: "all" | "festival" | "private"; label: L }[] = [
@@ -189,9 +187,10 @@ export const STATS: { value: number; suffix: string; label: L }[] = [
 ];
 
 /** The three Void systems VONE deploys, with real product specs. */
-export const SYSTEMS: { name: string; kind: L; body: L }[] = [
+export const SYSTEMS: { name: string; kind: L; body: L; image: string }[] = [
   {
     name: "Incubus",
+    image: "/images/sys-incubus.jpg",
     kind: { es: "Sistema insignia · gran formato", en: "Flagship · large format" },
     body: {
       es: "Sistema horn-loaded de 5 vías: Air Array de medios-agudos, subgraves Hyperfold (4×15\") e Incubus Sub (3×21\"). Mucha pegada y presencia en escena, para festivales y grandes producciones.",
@@ -200,6 +199,7 @@ export const SYSTEMS: { name: string; kind: L; body: L }[] = [
   },
   {
     name: "Arclite",
+    image: "/images/sys-arclite.jpg",
     kind: { es: "Formato medio · versátil", en: "Mid format · versatile" },
     body: {
       es: "Potencia y definición Void en un formato más manejable, para eventos medianos y salas donde no quieres cargar con un sistema enorme.",
@@ -208,6 +208,7 @@ export const SYSTEMS: { name: string; kind: L; body: L }[] = [
   },
   {
     name: "Nexus",
+    image: "/images/sys-nexus.jpg",
     kind: { es: "Integración · espacios fijos", en: "Integration · fixed spaces" },
     body: {
       es: "Para instalación permanente en clubs, restaurantes y negocios: buen sonido con la estética Void integrada en el local.",
@@ -232,9 +233,11 @@ export const MANIFESTO: L<string>[] = [
 
 export const CLIENTS = [
   "MANAWA FESTIVAL",
-  "FULLNES FESTIVAL",
+  "FLORIDANCE FESTIVAL",
+  "FULLNESS FESTIVAL",
   "AMEBA FESTIVAL",
   "P.P.M. EVENTS",
   "SKIZODELIC MIND CREW",
+  "RAVEART",
   "VOID ACOUSTICS",
 ];

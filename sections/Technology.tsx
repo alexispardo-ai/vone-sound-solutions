@@ -55,23 +55,34 @@ export default function Technology() {
                   viewport={viewportOnce}
                   transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                   data-cursor="Void"
-                  className="group relative overflow-hidden rounded-4xl border border-white/10 bg-ink-800/40 p-8 transition-colors duration-500 hover:bg-ink-800 md:p-10"
+                  className="group relative grid grid-cols-1 overflow-hidden rounded-4xl border border-white/10 bg-ink-800/40 transition-colors duration-500 hover:bg-ink-800 sm:grid-cols-[minmax(0,11rem)_1fr]"
                 >
-                  <div className="absolute -inset-32 bg-[radial-gradient(circle,rgba(194,26,90,0.12),transparent_60%)] opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
-                  <div className="relative flex flex-col gap-4 md:flex-row md:items-baseline md:justify-between">
-                    <div className="flex items-baseline gap-4">
-                      <span className="font-mono text-sm text-chalk-dim">0{i + 1}</span>
-                      <h3 className="font-display text-3xl font-semibold tracking-tightest md:text-4xl">
-                        {system.name}
-                      </h3>
-                    </div>
-                    <span className="text-xs uppercase tracking-[0.2em] text-signal-soft">
-                      {pick(system.kind, lang)}
-                    </span>
+                  <div className="relative aspect-[4/3] overflow-hidden sm:aspect-auto sm:h-full">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={system.image}
+                      alt={`Void ${system.name}`}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-signal group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink-900/50 to-transparent sm:bg-gradient-to-r" />
                   </div>
-                  <p className="relative mt-5 max-w-2xl leading-relaxed text-chalk-dim">
-                    {pick(system.body, lang)}
-                  </p>
+                  <div className="relative p-8 md:p-10">
+                    <div className="flex flex-col gap-4 md:flex-row md:items-baseline md:justify-between">
+                      <div className="flex items-baseline gap-4">
+                        <span className="font-mono text-sm text-chalk-dim">0{i + 1}</span>
+                        <h3 className="font-display text-3xl font-semibold tracking-tightest md:text-4xl">
+                          {system.name}
+                        </h3>
+                      </div>
+                      <span className="text-xs uppercase tracking-[0.2em] text-signal-soft">
+                        {pick(system.kind, lang)}
+                      </span>
+                    </div>
+                    <p className="mt-5 max-w-2xl leading-relaxed text-chalk-dim">
+                      {pick(system.body, lang)}
+                    </p>
+                  </div>
                 </motion.article>
               ))}
             </div>
