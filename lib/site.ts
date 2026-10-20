@@ -1,11 +1,11 @@
 /**
  * Central content model for VONE · Vibrational One.
- * Real company data. Translatable fields are bilingual objects: { es, en }.
+ * Real company data. Translatable fields are objects with all locales: { es, en, fr, de }.
  * Use `pick(field, lang)` (see lib/i18n.ts) to resolve a string per locale.
  */
 
-export type Locale = "es" | "en";
-/** A bilingual value. */
+export type Locale = "es" | "en" | "fr" | "de";
+/** A localised value (one entry per locale). */
 export type L<T = string> = Record<Locale, T>;
 
 export const SITE = {
@@ -15,6 +15,8 @@ export const SITE = {
   partner: {
     es: "Premium Partner Oficial Void · España & Portugal",
     en: "Official Void Premium Partner · Spain & Portugal",
+    fr: "Partenaire Premium Officiel Void · Espagne & Portugal",
+    de: "Offizieller Void Premium Partner · Spanien & Portugal",
   } as L,
   tagline: "Feel The Frequency",
   // Assumed until the definitive domain is live; update when registered.
@@ -34,12 +36,12 @@ export const SITE = {
 } as const;
 
 export const NAV_LINKS: { href: string; label: L }[] = [
-  { href: "#about", label: { es: "Nosotros", en: "Studio" } },
-  { href: "#services", label: { es: "Servicios", en: "Services" } },
-  { href: "#systems", label: { es: "Sistemas", en: "Systems" } },
-  { href: "#work", label: { es: "Proyectos", en: "Work" } },
-  { href: "#process", label: { es: "Proceso", en: "Process" } },
-  { href: "#contact", label: { es: "Contacto", en: "Contact" } },
+  { href: "#about", label: { es: "Nosotros", en: "Studio", fr: "À propos", de: "Über uns" } },
+  { href: "#services", label: { es: "Servicios", en: "Services", fr: "Services", de: "Leistungen" } },
+  { href: "#systems", label: { es: "Sistemas", en: "Systems", fr: "Systèmes", de: "Systeme" } },
+  { href: "#work", label: { es: "Proyectos", en: "Work", fr: "Projets", de: "Projekte" } },
+  { href: "#process", label: { es: "Proceso", en: "Process", fr: "Processus", de: "Ablauf" } },
+  { href: "#contact", label: { es: "Contacto", en: "Contact", fr: "Contact", de: "Kontakt" } },
 ];
 
 export type Service = {
@@ -54,105 +56,137 @@ export const SERVICES: Service[] = [
   {
     id: "rental",
     index: "01",
-    title: { es: "Rental Void", en: "Void Rental" },
+    title: { es: "Rental Void", en: "Void Rental", fr: "Location Void", de: "Void Vermietung" },
     summary: {
       es: "Alquiler de sistemas Void para conciertos, giras, festivales y eventos corporativos y privados. Lo llevamos y lo montamos nosotros.",
       en: "Void system rental for concerts, tours, festivals and corporate or private events. We bring it and set it up ourselves.",
+      fr: "Location de systèmes Void pour concerts, tournées, festivals et événements corporate ou privés. On l'apporte et on l'installe nous-mêmes.",
+      de: "Vermietung von Void-Systemen für Konzerte, Touren, Festivals und Firmen- oder Privatevents. Wir bringen und bauen alles selbst auf.",
     },
     tags: {
       es: ["Live Events", "Touring", "Festivales"],
       en: ["Live Events", "Touring", "Festivals"],
+      fr: ["Live Events", "Tournées", "Festivals"],
+      de: ["Live Events", "Touring", "Festivals"],
     },
   },
   {
     id: "sound-integration",
     index: "02",
-    title: { es: "Integración de Sonido", en: "Sound Integration" },
+    title: { es: "Integración de Sonido", en: "Sound Integration", fr: "Intégration Audio", de: "Audio-Integration" },
     summary: {
       es: "Instalaciones fijas de audio Void para clubs, restaurantes y negocios donde la calidad del sonido y la estética importan por igual.",
       en: "Fixed Void audio installs for clubs, restaurants and venues where sound quality and aesthetics matter equally.",
+      fr: "Installations audio Void fixes pour clubs, restaurants et commerces où la qualité du son et l'esthétique comptent autant.",
+      de: "Fest installierte Void-Audioanlagen für Clubs, Restaurants und Betriebe, wo Klangqualität und Ästhetik gleich wichtig sind.",
     },
     tags: {
       es: ["Clubs", "Restaurantes", "Negocios"],
       en: ["Clubs", "Restaurants", "Venues"],
+      fr: ["Clubs", "Restaurants", "Commerces"],
+      de: ["Clubs", "Restaurants", "Betriebe"],
     },
   },
   {
     id: "equipment",
     index: "03",
-    title: { es: "Gestión de Equipamiento", en: "Equipment Management" },
+    title: { es: "Gestión de Equipamiento", en: "Equipment Management", fr: "Gestion du Matériel", de: "Equipment-Management" },
     summary: {
       es: "Preparación, transporte y mantenimiento del equipo. Todo sale probado y listo para funcionar.",
       en: "Prep, transport and maintenance of the rig. Everything ships tested and ready to go.",
+      fr: "Préparation, transport et entretien du matériel. Tout part testé et prêt à fonctionner.",
+      de: "Vorbereitung, Transport und Wartung des Equipments. Alles verlässt uns getestet und einsatzbereit.",
     },
     tags: {
       es: ["Prep", "Logística", "Mantenimiento"],
       en: ["Prep", "Logistics", "Maintenance"],
+      fr: ["Prép.", "Logistique", "Entretien"],
+      de: ["Vorbereitung", "Logistik", "Wartung"],
     },
   },
   {
     id: "installations",
     index: "04",
-    title: { es: "Instalaciones", en: "Installations" },
+    title: { es: "Instalaciones", en: "Installations", fr: "Installations", de: "Installationen" },
     summary: {
       es: "Proyectos llave en mano: diseño acústico, instalación y puesta en marcha de sistemas permanentes calibrados a medida del espacio.",
       en: "Turnkey projects: acoustic design, install and commissioning of permanent systems calibrated to the space.",
+      fr: "Projets clés en main : étude acoustique, installation et mise en service de systèmes permanents calibrés sur mesure pour le lieu.",
+      de: "Schlüsselfertige Projekte: Akustikplanung, Installation und Inbetriebnahme fester Anlagen, maßgeschneidert für den Raum kalibriert.",
     },
     tags: {
       es: ["Diseño acústico", "Instalación", "Calibración"],
       en: ["Acoustic design", "Install", "Calibration"],
+      fr: ["Étude acoustique", "Installation", "Calibrage"],
+      de: ["Akustikplanung", "Installation", "Kalibrierung"],
     },
   },
   {
     id: "scenography",
     index: "05",
-    title: { es: "Escenografía & Deco", en: "Scenography & Decor" },
+    title: { es: "Escenografía & Deco", en: "Scenography & Decor", fr: "Scénographie & Déco", de: "Bühnenbild & Deko" },
     summary: {
       es: "Escenografía y decoración para que el espacio acompañe al sonido, en la misma línea que los equipos Void.",
       en: "Set design and decor so the space matches the sound, in the same line as the Void rigs.",
+      fr: "Scénographie et décoration pour que l'espace accompagne le son, dans la même ligne que les systèmes Void.",
+      de: "Bühnenbild und Dekoration, damit der Raum den Sound begleitet, in einer Linie mit den Void-Anlagen.",
     },
     tags: {
       es: ["Escenografía", "Decoración", "Ambiente"],
       en: ["Set design", "Decor", "Atmosphere"],
+      fr: ["Scénographie", "Décoration", "Ambiance"],
+      de: ["Bühnenbild", "Dekoration", "Ambiente"],
     },
   },
   {
     id: "led",
     index: "06",
-    title: { es: "LED", en: "LED" },
+    title: { es: "LED", en: "LED", fr: "LED", de: "LED" },
     summary: {
       es: "Pantallas y superficies LED de alta resolución para reforzar el impacto visual del directo a cualquier escala.",
       en: "High-resolution LED screens and surfaces that amplify the visual impact of the show at any scale.",
+      fr: "Écrans et surfaces LED haute résolution pour renforcer l'impact visuel du live, à toutes les échelles.",
+      de: "Hochauflösende LED-Wände und -Flächen, die die visuelle Wirkung der Show in jeder Größe verstärken.",
     },
     tags: {
       es: ["Pantallas", "Alta resolución", "Directo"],
       en: ["Screens", "High-res", "Live"],
+      fr: ["Écrans", "Haute résolution", "Live"],
+      de: ["Screens", "Hohe Auflösung", "Live"],
     },
   },
   {
     id: "lighting",
     index: "07",
-    title: { es: "Iluminación & Proyecciones", en: "Lighting & Projection" },
+    title: { es: "Iluminación & Proyecciones", en: "Lighting & Projection", fr: "Éclairage & Projections", de: "Licht & Projektionen" },
     summary: {
       es: "Diseño de iluminación, lighting de espectáculo y proyecciones para que el evento entre también por los ojos.",
       en: "Lighting design, show lighting and projection so the event lands visually too.",
+      fr: "Conception lumière, éclairage de spectacle et projections pour que l'événement passe aussi par les yeux.",
+      de: "Lichtdesign, Showbeleuchtung und Projektionen, damit das Event auch über die Augen wirkt.",
     },
     tags: {
       es: ["Lighting", "Diseño", "Proyecciones"],
       en: ["Lighting", "Design", "Projection"],
+      fr: ["Lumière", "Design", "Projections"],
+      de: ["Licht", "Design", "Projektionen"],
     },
   },
   {
     id: "power",
     index: "08",
-    title: { es: "Equipamiento Eléctrico", en: "Power & Electrical" },
+    title: { es: "Equipamiento Eléctrico", en: "Power & Electrical", fr: "Alimentation Électrique", de: "Stromversorgung" },
     summary: {
       es: "Distribución eléctrica y grupos para producciones que no pueden permitirse un fallo. Potencia estable, siempre.",
       en: "Power distribution and generation for productions that can't afford a failure. Stable power, always.",
+      fr: "Distribution électrique et groupes électrogènes pour des productions qui ne peuvent pas se permettre une panne. Une puissance stable, toujours.",
+      de: "Stromverteilung und Generatoren für Produktionen, die sich keinen Ausfall leisten können. Stabile Leistung, immer.",
     },
     tags: {
       es: ["Distribución", "Grupos", "Redundancia"],
       en: ["Distribution", "Generators", "Redundancy"],
+      fr: ["Distribution", "Groupes", "Redondance"],
+      de: ["Verteilung", "Generatoren", "Redundanz"],
     },
   },
 ];
@@ -166,24 +200,27 @@ export type CaseStudy = {
   system: string;
 };
 
+const CAT_FESTIVAL: L = { es: "Festival", en: "Festival", fr: "Festival", de: "Festival" };
+const CAT_PRIVATE: L = { es: "Evento Privado", en: "Private Event", fr: "Événement privé", de: "Private Veranstaltung" };
+
 export const CASE_STUDIES: CaseStudy[] = [
-  { id: "manawa", title: "Manawa Festival", client: "Manawa Festival", categoryKey: "festival", category: { es: "Festival", en: "Festival" }, system: "Void Incubus" },
-  { id: "floridance", title: "Floridance Festival", client: "Floridance Festival", categoryKey: "festival", category: { es: "Festival", en: "Festival" }, system: "Void Incubus" },
-  { id: "retrohalloween", title: "Retro Halloween", client: "RaveArt", categoryKey: "private", category: { es: "Evento Privado", en: "Private Event" }, system: "Arclite" },
-  { id: "ppm", title: "Aniversario P.P.M.", client: "P.P.M. Events", categoryKey: "private", category: { es: "Evento Privado", en: "Private Event" }, system: "Arclite" },
+  { id: "manawa", title: "Manawa Festival", client: "Manawa Festival", categoryKey: "festival", category: CAT_FESTIVAL, system: "Void Incubus" },
+  { id: "floridance", title: "Floridance Festival", client: "Floridance Festival", categoryKey: "festival", category: CAT_FESTIVAL, system: "Void Incubus" },
+  { id: "retrohalloween", title: "Retro Halloween", client: "RaveArt", categoryKey: "private", category: CAT_PRIVATE, system: "Arclite" },
+  { id: "ppm", title: "Aniversario P.P.M.", client: "P.P.M. Events", categoryKey: "private", category: CAT_PRIVATE, system: "Arclite" },
 ];
 
 export const WORK_FILTERS: { key: "all" | "festival" | "private"; label: L }[] = [
-  { key: "all", label: { es: "Todos", en: "All" } },
-  { key: "festival", label: { es: "Festivales", en: "Festivals" } },
-  { key: "private", label: { es: "Eventos Privados", en: "Private Events" } },
+  { key: "all", label: { es: "Todos", en: "All", fr: "Tous", de: "Alle" } },
+  { key: "festival", label: { es: "Festivales", en: "Festivals", fr: "Festivals", de: "Festivals" } },
+  { key: "private", label: { es: "Eventos Privados", en: "Private Events", fr: "Événements privés", de: "Private Events" } },
 ];
 
 export const STATS: { value: number; suffix: string; label: L }[] = [
-  { value: 100, suffix: "%", label: { es: "Sistemas Void Acoustics", en: "Void Acoustics systems" } },
-  { value: 3, suffix: "", label: { es: "Sistemas insignia: Incubus · Arclite · Nexus", en: "Flagship systems: Incubus · Arclite · Nexus" } },
-  { value: 2, suffix: "", label: { es: "Países · España & Portugal", en: "Countries · Spain & Portugal" } },
-  { value: 6, suffix: "+", label: { es: "Producciones en directo", en: "Live productions" } },
+  { value: 100, suffix: "%", label: { es: "Sistemas Void Acoustics", en: "Void Acoustics systems", fr: "Systèmes Void Acoustics", de: "Void-Acoustics-Systeme" } },
+  { value: 3, suffix: "", label: { es: "Sistemas insignia: Incubus · Arclite · Nexus", en: "Flagship systems: Incubus · Arclite · Nexus", fr: "Systèmes phares : Incubus · Arclite · Nexus", de: "Flaggschiff-Systeme: Incubus · Arclite · Nexus" } },
+  { value: 2, suffix: "", label: { es: "Países · España & Portugal", en: "Countries · Spain & Portugal", fr: "Pays · Espagne & Portugal", de: "Länder · Spanien & Portugal" } },
+  { value: 6, suffix: "+", label: { es: "Producciones en directo", en: "Live productions", fr: "Productions en live", de: "Live-Produktionen" } },
 ];
 
 /** The three Void systems VONE deploys, with real product specs. */
@@ -191,44 +228,50 @@ export const SYSTEMS: { name: string; kind: L; body: L; image: string }[] = [
   {
     name: "Incubus",
     image: "/images/sys-incubus.jpg",
-    kind: { es: "Sistema insignia · gran formato", en: "Flagship · large format" },
+    kind: { es: "Sistema insignia · gran formato", en: "Flagship · large format", fr: "Système phare · grand format", de: "Flaggschiff · Großformat" },
     body: {
       es: "Sistema horn-loaded de 5 vías: Air Array de medios-agudos, subgraves Hyperfold (4×15\") e Incubus Sub (3×21\"). Mucha pegada y presencia en escena, para festivales y grandes producciones.",
       en: "A 5-way horn-loaded system: Air Array mid-highs, Hyperfold subs (4×15\") and Incubus Sub (3×21\"). Huge output and real presence on stage, for festivals and large productions.",
+      fr: "Système à pavillon 5 voies : Air Array médium-aigu, subs Hyperfold (4×15\") et Incubus Sub (3×21\"). Beaucoup de punch et une vraie présence sur scène, pour les festivals et les grandes productions.",
+      de: "Hornbelastetes 5-Wege-System: Air Array für Mitten und Höhen, Hyperfold-Subs (4×15\") und Incubus Sub (3×21\"). Viel Druck und echte Bühnenpräsenz, für Festivals und große Produktionen.",
     },
   },
   {
     name: "Arclite",
     image: "/images/sys-arclite.jpg",
-    kind: { es: "Formato medio · versátil", en: "Mid format · versatile" },
+    kind: { es: "Formato medio · versátil", en: "Mid format · versatile", fr: "Format moyen · polyvalent", de: "Mittelformat · vielseitig" },
     body: {
       es: "Potencia y definición Void en un formato más manejable, para eventos medianos y salas donde no quieres cargar con un sistema enorme.",
       en: "Void's power and definition in a more manageable format, for mid-size events and rooms where you don't want to haul a huge system.",
+      fr: "La puissance et la définition Void dans un format plus maniable, pour les événements moyens et les salles où l'on ne veut pas trimballer un système énorme.",
+      de: "Void-Leistung und -Definition in einem handlicheren Format, für mittelgroße Events und Räume, in denen man kein riesiges System schleppen will.",
     },
   },
   {
     name: "Nexus",
     image: "/images/sys-nexus.jpg",
-    kind: { es: "Integración · espacios fijos", en: "Integration · fixed spaces" },
+    kind: { es: "Integración · espacios fijos", en: "Integration · fixed spaces", fr: "Intégration · lieux fixes", de: "Integration · feste Räume" },
     body: {
       es: "Para instalación permanente en clubs, restaurantes y negocios: buen sonido con la estética Void integrada en el local.",
       en: "For permanent install in clubs, restaurants and venues: great sound with Void's look built into the space.",
+      fr: "Pour une installation permanente en clubs, restaurants et commerces : un bon son avec l'esthétique Void intégrée au lieu.",
+      de: "Für die feste Installation in Clubs, Restaurants und Betrieben: guter Sound mit integrierter Void-Ästhetik im Raum.",
     },
   },
 ];
 
 export const PROCESS: { step: string; title: L; body: L }[] = [
-  { step: "01", title: { es: "Escucha", en: "Discovery" }, body: { es: "Vemos el espacio, el público y lo que buscas antes de proponer nada.", en: "We look at the space, the audience and what you're after before proposing anything." } },
-  { step: "02", title: { es: "Diseño", en: "Design" }, body: { es: "Diseño acústico y visual del sistema Void a medida del proyecto.", en: "Acoustic and visual design of the Void system, tailored to the project." } },
-  { step: "03", title: { es: "Preparación", en: "Prep" }, body: { es: "Equipamiento probado, cableado y logística resuelta antes del montaje.", en: "Gear tested, wired and logistics solved before load-in." } },
-  { step: "04", title: { es: "Montaje", en: "Deploy" }, body: { es: "Instalación y calibración in situ para que suene bien en esa sala concreta.", en: "On-site install and calibration so it sounds right in that specific room." } },
-  { step: "05", title: { es: "Directo", en: "Live" }, body: { es: "Operación y soporte durante el evento. Potencia estable, sonido impecable.", en: "Operation and support throughout the event. Stable power, flawless sound." } },
+  { step: "01", title: { es: "Escucha", en: "Discovery", fr: "Écoute", de: "Zuhören" }, body: { es: "Vemos el espacio, el público y lo que buscas antes de proponer nada.", en: "We look at the space, the audience and what you're after before proposing anything.", fr: "On regarde le lieu, le public et ce que tu cherches avant de proposer quoi que ce soit.", de: "Wir schauen uns den Ort, das Publikum und dein Ziel an, bevor wir etwas vorschlagen." } },
+  { step: "02", title: { es: "Diseño", en: "Design", fr: "Conception", de: "Konzept" }, body: { es: "Diseño acústico y visual del sistema Void a medida del proyecto.", en: "Acoustic and visual design of the Void system, tailored to the project.", fr: "Conception acoustique et visuelle du système Void, sur mesure pour le projet.", de: "Akustische und visuelle Planung des Void-Systems, maßgeschneidert für das Projekt." } },
+  { step: "03", title: { es: "Preparación", en: "Prep", fr: "Préparation", de: "Vorbereitung" }, body: { es: "Equipamiento probado, cableado y logística resuelta antes del montaje.", en: "Gear tested, wired and logistics solved before load-in.", fr: "Matériel testé, câblé et logistique réglée avant le montage.", de: "Equipment getestet, verkabelt und Logistik geklärt, noch vor dem Aufbau." } },
+  { step: "04", title: { es: "Montaje", en: "Deploy", fr: "Montage", de: "Aufbau" }, body: { es: "Instalación y calibración in situ para que suene bien en esa sala concreta.", en: "On-site install and calibration so it sounds right in that specific room.", fr: "Installation et calibrage sur place pour que ça sonne bien dans cette salle précise.", de: "Installation und Kalibrierung vor Ort, damit es in genau diesem Raum gut klingt." } },
+  { step: "05", title: { es: "Directo", en: "Live", fr: "Live", de: "Live" }, body: { es: "Operación y soporte durante el evento. Potencia estable, sonido impecable.", en: "Operation and support throughout the event. Stable power, flawless sound.", fr: "Exploitation et support pendant l'événement. Puissance stable, son impeccable.", de: "Betrieb und Support während des Events. Stabile Leistung, makelloser Sound." } },
 ];
 
 export const MANIFESTO: L<string>[] = [
-  { es: "Somos los únicos en traer Void Incubus a España y Portugal.", en: "We're the only ones bringing Void Incubus to Spain and Portugal." },
-  { es: "Sonido que se ve y se siente.", en: "Sound you can see and feel." },
-  { es: "Si entra por los oídos, también tiene que entrar por los ojos.", en: "If it hits your ears, it should hit your eyes too." },
+  { es: "Somos los únicos en traer Void Incubus a España y Portugal.", en: "We're the only ones bringing Void Incubus to Spain and Portugal.", fr: "Nous sommes les seuls à amener Void Incubus en Espagne et au Portugal.", de: "Wir sind die Einzigen, die Void Incubus nach Spanien und Portugal bringen." },
+  { es: "Sonido que se ve y se siente.", en: "Sound you can see and feel.", fr: "Un son qui se voit et se ressent.", de: "Sound, den man sieht und spürt." },
+  { es: "Si entra por los oídos, también tiene que entrar por los ojos.", en: "If it hits your ears, it should hit your eyes too.", fr: "Si ça entre par les oreilles, ça doit aussi entrer par les yeux.", de: "Was durch die Ohren geht, muss auch durch die Augen gehen." },
 ];
 
 export const CLIENTS = [

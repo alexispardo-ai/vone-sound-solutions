@@ -13,17 +13,21 @@ type Ctx = {
 
 const LanguageContext = createContext<Ctx | null>(null);
 
+export const LOCALES: Locale[] = ["es", "en", "fr", "de"];
+
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Locale>(DEFAULT_LOCALE);
 
   // Restore preference; otherwise infer from the browser once.
   useEffect(() => {
     const saved = window.localStorage.getItem("vone-lang") as Locale | null;
-    if (saved === "es" || saved === "en") {
+    if (saved && LOCALES.includes(saved)) {
       setLangState(saved);
-    } else if (navigator.language?.toLowerCase().startsWith("en")) {
-      setLangState("en");
+      return;
     }
+    const browser = navigator.language?.slice(0, 2).toLowerCase();
+    const match = LOCALES.find((l) => l === browser);
+    if (match) setLangState(match);
   }, []);
 
   const setLang = (l: Locale) => {
@@ -36,7 +40,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     document.documentElement.lang = lang;
   }, [lang]);
 
-  const toggle = () => setLang(lang === "es" ? "en" : "es");
+  // Cycle through the available locales.
+  const toggle = () => {
+    const i = LOCALES.indexOf(lang);
+    setLang(LOCALES[(i + 1) % LOCALES.length]);
+  };
 
   return (
     <LanguageContext.Provider value={{ lang, setLang, toggle, ui: UI[lang] as UIStrings }}>

@@ -7,6 +7,14 @@ export function pick<T>(value: L<T>, lang: Locale): T {
 
 export const DEFAULT_LOCALE: Locale = "es";
 
+/** BCP-47 tags for Intl date formatting per locale. */
+export const DATE_LOCALE: Record<Locale, string> = {
+  es: "es-ES",
+  en: "en-GB",
+  fr: "fr-FR",
+  de: "de-DE",
+};
+
 /** Static UI copy (section labels, headings, buttons) per locale. */
 export const UI = {
   es: {
@@ -101,6 +109,98 @@ export const UI = {
     footer: { explore: "Explore", connect: "Contact", rights: "All rights reserved.", privacy: "Privacy", terms: "Terms" },
     notFound: { title: "Signal lost.", body: "The page you were looking for isn't here anymore.", cta: "Back to home" },
   },
+  fr: {
+    nav: { cta: "Devis gratuit", blog: "Blog" },
+    hero: {
+      eyebrow: "Son professionnel · Powered by VOID Acoustics",
+      headline: ["Feel", "The", "Frequency"],
+      sub: "Partenaire Premium Officiel de Void en Espagne et au Portugal. Nous louons et installons les systèmes Incubus, Arclite et Nexus pour que ton événement sonne comme il le mérite.",
+      primary: "Voir les projets",
+      secondary: "Devis gratuit",
+      scroll: "Explorer",
+    },
+    about: {
+      label: "Qui sommes-nous",
+      heading: "Un son qui se voit et se ressent.",
+      p1: "v-One (Vibrational One) est une entreprise de Málaga spécialisée dans le son pour événements. Nous sommes les seuls à amener Void Incubus en Espagne et au Portugal, un système que nous plaçons parmi les meilleurs au monde.",
+      p2: "En tant que Partenaire Premium Officiel de Void, nous travaillons avec les systèmes Incubus, Arclite et Nexus. Nous installons dans les commerces, clubs et restaurants, et montons le son sur des événements de toutes tailles.",
+      bandNote: "Void Acoustics, une référence du son live.",
+      bandBig: "VOID · ES & PT",
+    },
+    services: {
+      label: "Ce que nous faisons",
+      heading: "Location, installation et production.",
+      intro: "Du système de son au moindre détail de scénographie et de lumière, le tout avec la même équipe.",
+    },
+    work: { label: "Projets", heading: "Quelques-uns de nos montages." },
+    stats: { label: "En chiffres" },
+    systems: {
+      label: "La technologie",
+      heading: "Nous travaillons avec Void Acoustics.",
+      intro: "Nous choisissons et réglons le système Void le mieux adapté à chaque salle. Il sonne fort et clair, et en impose aussi à l'œil.",
+    },
+    clients: { label: "Ils nous ont fait confiance" },
+    process: {
+      label: "Comment on travaille",
+      heading: "De l'idée au live.",
+      intro: "Cinq étapes pour que, le jour J, tout se passe comme il faut.",
+    },
+    manifesto: { label: "Notre vision" },
+    cta: {
+      words: ["Parlons", "de", "ton", "événement."],
+      sub: "Dis-nous ce que tu as en tête, l'événement ou le lieu, et on te dit comment on le monte.",
+      primary: "Écris-nous",
+      secondary: "WhatsApp",
+    },
+    footer: { explore: "Explorer", connect: "Contact", rights: "Tous droits réservés.", privacy: "Confidentialité", terms: "Mentions légales" },
+    notFound: { title: "Signal perdu.", body: "La page que tu cherchais n'est plus là.", cta: "Retour à l'accueil" },
+  },
+  de: {
+    nav: { cta: "Angebot anfragen", blog: "Blog" },
+    hero: {
+      eyebrow: "Professioneller Sound · Powered by VOID Acoustics",
+      headline: ["Feel", "The", "Frequency"],
+      sub: "Offizieller Void Premium Partner in Spanien und Portugal. Wir vermieten und installieren die Systeme Incubus, Arclite und Nexus, damit dein Event so klingt, wie es soll.",
+      primary: "Projekte ansehen",
+      secondary: "Angebot anfragen",
+      scroll: "Entdecken",
+    },
+    about: {
+      label: "Wer wir sind",
+      heading: "Sound, den man sieht und spürt.",
+      p1: "v-One (Vibrational One) ist ein Unternehmen aus Málaga, spezialisiert auf Sound für Events. Wir sind die Einzigen, die Void Incubus nach Spanien und Portugal bringen, ein System, das für uns zu den besten der Welt gehört.",
+      p2: "Als Offizieller Void Premium Partner arbeiten wir mit den Systemen Incubus, Arclite und Nexus. Wir installieren in Betrieben, Clubs und Restaurants und bauen den Sound für Events jeder Größe auf.",
+      bandNote: "Void Acoustics, eine Referenz im Live-Sound.",
+      bandBig: "VOID · ES & PT",
+    },
+    services: {
+      label: "Was wir machen",
+      heading: "Vermietung, Installation und Produktion.",
+      intro: "Vom Soundsystem bis zum letzten Detail von Bühnenbild und Licht, alles aus einer Hand.",
+    },
+    work: { label: "Projekte", heading: "Einige unserer Aufbauten." },
+    stats: { label: "In Zahlen" },
+    systems: {
+      label: "Die Technik",
+      heading: "Wir arbeiten mit Void Acoustics.",
+      intro: "Wir wählen und justieren das Void-System, das am besten in jeden Raum passt. Es klingt kraftvoll und klar und macht auch optisch etwas her.",
+    },
+    clients: { label: "Sie haben uns vertraut" },
+    process: {
+      label: "Wie wir arbeiten",
+      heading: "Von der Idee zum Live-Event.",
+      intro: "Fünf Schritte, damit am Tag des Events alles so läuft, wie es soll.",
+    },
+    manifesto: { label: "Unsere Sichtweise" },
+    cta: {
+      words: ["Sprechen", "wir", "über", "dein", "Event."],
+      sub: "Erzähl uns, was du vorhast, das Event oder die Location, und wir sagen dir, wie wir es aufbauen.",
+      primary: "Schreib uns",
+      secondary: "WhatsApp",
+    },
+    footer: { explore: "Entdecken", connect: "Kontakt", rights: "Alle Rechte vorbehalten.", privacy: "Datenschutz", terms: "Impressum" },
+    notFound: { title: "Signal verloren.", body: "Die gesuchte Seite ist nicht mehr hier.", cta: "Zurück zur Startseite" },
+  },
 } as const;
 
 export type UIStrings = (typeof UI)["es"];
@@ -124,5 +224,23 @@ export const BLOG_UI = {
     min: "min",
     back: "Back to the blog",
     empty: "The first article is coming soon.",
+  },
+  fr: {
+    label: "Blog",
+    title: "Notes depuis la scène",
+    intro: "Son, Void Acoustics et ce qu'on apprend en montant des événements.",
+    read: "Lire",
+    min: "min",
+    back: "Retour au blog",
+    empty: "Le premier article arrive bientôt.",
+  },
+  de: {
+    label: "Blog",
+    title: "Notizen von der Bühne",
+    intro: "Sound, Void Acoustics und was wir beim Aufbau von Events lernen.",
+    read: "Lesen",
+    min: "Min.",
+    back: "Zurück zum Blog",
+    empty: "Der erste Artikel kommt bald.",
   },
 } as const;

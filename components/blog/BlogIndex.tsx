@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { useLanguage } from "@/components/LanguageProvider";
-import { BLOG_UI } from "@/lib/i18n";
+import { BLOG_UI, DATE_LOCALE } from "@/lib/i18n";
 import { viewportOnce } from "@/lib/motion";
 import type { PostMeta } from "@/lib/blog";
 
@@ -12,7 +12,7 @@ export default function BlogIndex({ posts }: { posts: PostMeta[] }) {
   const { lang } = useLanguage();
   const t = BLOG_UI[lang];
   const fmt = (d: string) =>
-    new Date(d).toLocaleDateString(lang === "es" ? "es-ES" : "en-GB", {
+    new Date(d).toLocaleDateString(DATE_LOCALE[lang], {
       day: "numeric",
       month: "long",
       year: "numeric",

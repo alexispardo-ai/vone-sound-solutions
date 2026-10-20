@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/components/LanguageProvider";
-import { BLOG_UI } from "@/lib/i18n";
+import { BLOG_UI, DATE_LOCALE } from "@/lib/i18n";
 import type { Post } from "@/lib/blog";
 
 export default function BlogArticle({ post }: { post: Post }) {
   const { lang } = useLanguage();
   const t = BLOG_UI[lang];
   const fmt = (d: string) =>
-    new Date(d).toLocaleDateString(post.lang === "es" ? "es-ES" : "en-GB", {
+    new Date(d).toLocaleDateString(DATE_LOCALE[post.lang], {
       day: "numeric",
       month: "long",
       year: "numeric",
