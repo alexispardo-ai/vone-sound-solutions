@@ -104,7 +104,7 @@ export default function Hero() {
           <MagneticButton href="#work" variant="solid" cursor="View">
             {ui.hero.primary}
           </MagneticButton>
-          <MagneticButton href="#contact" variant="outline" cursor="Talk">
+          <MagneticButton href="#contact" variant="glass" cursor="Talk">
             {ui.hero.secondary}
           </MagneticButton>
         </motion.div>

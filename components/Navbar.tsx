@@ -76,7 +76,7 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-4 lg:flex">
             <LanguageToggle />
-            <MagneticButton href={anchor("#contact")} variant="solid" className="px-6 py-3" cursor="Talk">
+            <MagneticButton href={anchor("#contact")} variant="glass" className="px-6 py-3" cursor="Talk">
               {ui.nav.cta}
             </MagneticButton>
           </div>
@@ -143,7 +143,7 @@ export default function Navbar() {
                 </Link>
               </motion.div>
               <div className="mt-8 flex items-center gap-4">
-                <MagneticButton href={anchor("#contact")} onClick={() => setOpen(false)}>
+                <MagneticButton href={anchor("#contact")} variant="glass" onClick={() => setOpen(false)}>
                   {ui.nav.cta}
                 </MagneticButton>
                 <LanguageToggle />

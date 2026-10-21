@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 type Props = {
   href?: string;
   children: React.ReactNode;
-  variant?: "solid" | "outline" | "ghost";
+  variant?: "solid" | "outline" | "ghost" | "glass";
   className?: string;
   onClick?: () => void;
   cursor?: string;
@@ -34,7 +34,18 @@ export default function MagneticButton({
     solid: "bg-white text-ink-900 hover:bg-signal hover:text-white",
     outline: "border border-white/20 text-white hover:border-white/60",
     ghost: "text-white/80 hover:text-white",
+    glass: "liquid-glass",
   } as const;
+
+  // Glass variant: feed the pointer position to the CSS specular highlight.
+  const onPointerMove =
+    variant === "glass"
+      ? (e: React.PointerEvent<HTMLElement>) => {
+          const r = e.currentTarget.getBoundingClientRect();
+          e.currentTarget.style.setProperty("--mx", `${e.clientX - r.left}px`);
+          e.currentTarget.style.setProperty("--my", `${e.clientY - r.top}px`);
+        }
+      : undefined;
 
   const inner = (
     <span
@@ -56,6 +67,8 @@ export default function MagneticButton({
       <Link
         href={href}
         data-cursor={cursor}
+        onClick={onClick}
+        onPointerMove={onPointerMove}
         className={cn(base, variants[variant], className)}
       >
         {inner}
@@ -68,6 +81,7 @@ export default function MagneticButton({
       type="button"
       onClick={onClick}
       data-cursor={cursor}
+      onPointerMove={onPointerMove}
       className={cn(base, variants[variant], className)}
     >
       {inner}
