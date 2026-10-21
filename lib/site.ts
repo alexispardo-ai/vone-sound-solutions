@@ -220,6 +220,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       { src: `${W}/manawa-1.jpg`, caption: { es: "El sistema Void montado en Manawa Festival, en pleno bosque.", en: "The Void rig set up at Manawa Festival, right in the forest.", fr: "Le système Void installé au Manawa Festival, en pleine forêt.", de: "Das Void-System beim Manawa Festival, mitten im Wald." } },
       { src: `${W}/manawa-2.jpg`, caption: { es: "El stack rojo junto al arte del escenario.", en: "The red stack next to the stage artwork.", fr: "Le stack rouge à côté du décor de la scène.", de: "Der rote Stack neben der Bühnendeko." } },
       { src: `${W}/manawa-4.jpg`, caption: { es: "Al caer la noche, listo para el directo.", en: "As night falls, ready for the show.", fr: "À la tombée de la nuit, prêt pour le live.", de: "Bei Einbruch der Nacht, bereit für die Show." } },
+      { src: `${W}/manawa-5.jpg`, caption: { es: "La cabina, enmarcada por el decorado psicodélico.", en: "The booth, framed by the psychedelic backdrop.", fr: "La cabine, encadrée par le décor psychédélique.", de: "Das DJ-Pult, eingerahmt von der psychedelischen Deko." } },
+      { src: `${W}/manawa-6.jpg`, caption: { es: "Escenario y sistema antes de abrir puertas.", en: "Stage and rig before doors open.", fr: "Scène et système avant l'ouverture des portes.", de: "Bühne und Anlage vor dem Einlass." } },
+      { src: `${W}/manawa-7.jpg`, caption: { es: "El Void rojo de cerca, entre los pinos.", en: "The red Void up close, among the pines.", fr: "Le Void rouge de près, entre les pins.", de: "Das rote Void aus der Nähe, zwischen den Kiefern." } },
     ],
   },
   {
@@ -234,6 +237,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       { src: `${W}/floridance-2.jpg`, caption: { es: "Set al atardecer, con Feel The Frequency en la pantalla.", en: "Sunset set, with Feel The Frequency on the screen.", fr: "Set au coucher du soleil, avec Feel The Frequency à l'écran.", de: "Set bei Sonnenuntergang, mit Feel The Frequency auf dem Screen." } },
       { src: `${W}/floridance-3.jpg`, caption: { es: "El escenario de noche, con los láseres en marcha.", en: "The stage at night, lasers running.", fr: "La scène de nuit, lasers en marche.", de: "Die Bühne bei Nacht, die Laser laufen." } },
       { src: `${W}/floridance-4.jpg`, caption: { es: "Manos arriba en cabina, entre las columnas LED.", en: "Hands up in the booth, between the LED columns.", fr: "Les mains en l'air en cabine, entre les colonnes LED.", de: "Hände hoch am Pult, zwischen den LED-Säulen." } },
+      { src: `${W}/floridance-5.jpg`, caption: { es: "El stack Void ya volado, horas antes del festival.", en: "The Void stack flown, hours before the festival.", fr: "Le stack Void accroché, quelques heures avant le festival.", de: "Der Void-Stack hängt, Stunden vor dem Festival." } },
+      { src: `${W}/floridance-6.jpg`, caption: { es: "Primeros asistentes al atardecer, junto al sistema.", en: "First arrivals at sunset, next to the rig.", fr: "Les premiers arrivés au coucher du soleil, près du système.", de: "Die ersten Gäste bei Sonnenuntergang, neben der Anlage." } },
     ],
   },
   {
@@ -248,6 +253,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       { src: `${W}/retro-2.jpg`, caption: { es: "La carpa principal vista desde arriba.", en: "The main tent seen from above.", fr: "Le chapiteau principal vu d'en haut.", de: "Das Hauptzelt von oben." } },
       { src: `${W}/retro-3.jpg`, caption: { es: "Subidón en primera fila durante el set.", en: "Front-row high during the set.", fr: "Euphorie au premier rang pendant le set.", de: "Ekstase in der ersten Reihe während des Sets." } },
       { src: `${W}/retro-4.jpg`, caption: { es: "Chispas y pirotecnia detrás de la cabina.", en: "Sparks and pyro behind the booth.", fr: "Étincelles et pyrotechnie derrière la cabine.", de: "Funken und Pyro hinter dem Pult." } },
+      { src: `${W}/retro-5.jpg`, caption: { es: "Desde la cabina, frente a toda la carpa.", en: "From the booth, facing the whole tent.", fr: "Depuis la cabine, face à tout le chapiteau.", de: "Vom Pult aus, mit Blick auf das ganze Zelt." } },
+      { src: `${W}/retro-6.jpg`, caption: { es: "La carpa llena con luz cálida.", en: "The packed tent under warm light.", fr: "Le chapiteau plein sous une lumière chaude.", de: "Das volle Zelt in warmem Licht." } },
     ],
   },
   {
@@ -262,6 +269,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       { src: `${W}/ppm-2.jpg`, caption: { es: "Atardecer, con el público llegando a la pista.", en: "Sunset, with the crowd filling the floor.", fr: "Coucher du soleil, le public arrive sur la piste.", de: "Sonnenuntergang, das Publikum füllt die Fläche." } },
       { src: `${W}/ppm-3.jpg`, caption: { es: "El escenario y las cajas Void a plena luz.", en: "The stage and the Void cabinets in daylight.", fr: "La scène et les enceintes Void en plein jour.", de: "Die Bühne und die Void-Boxen bei Tageslicht." } },
       { src: `${W}/ppm-4.jpg`, caption: { es: "Luces rojas sobre la pista en lo mejor de la noche.", en: "Red lights over the floor at the peak of the night.", fr: "Lumières rouges sur la piste au cœur de la nuit.", de: "Rote Lichter über der Fläche zur besten Stunde." } },
+      { src: `${W}/ppm-5.jpg`, caption: { es: "Tony Romera en cabina, con humo y el sistema en rojo.", en: "Tony Romera in the booth, with haze and the rig in red.", fr: "Tony Romera en cabine, avec la fumée et le système en rouge.", de: "Tony Romera am Pult, mit Nebel und der Anlage in Rot." } },
+      { src: `${W}/ppm-6.jpg`, caption: { es: "Atardecer en primera fila, junto a las cajas Void.", en: "Sunset in the front row, next to the Void cabinets.", fr: "Coucher du soleil au premier rang, près des enceintes Void.", de: "Sonnenuntergang in der ersten Reihe, neben den Void-Boxen." } },
     ],
   },
 ];

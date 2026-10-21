@@ -152,7 +152,7 @@ export default function ProjectGallery({
           {/* Thumbnails */}
           {n > 1 && (
             <div
-              className="container-editorial flex justify-center gap-2 pb-8"
+              className="container-editorial flex gap-2 overflow-x-auto pb-8 sm:justify-center"
               onClick={(e) => e.stopPropagation()}
             >
               {photos.map((p, idx) => (
@@ -161,7 +161,7 @@ export default function ProjectGallery({
                   onClick={() => setI(idx)}
                   aria-label={`${pick(T.photo, lang)} ${idx + 1}`}
                   aria-current={idx === i}
-                  className={`h-14 w-20 overflow-hidden rounded-xl border transition-all duration-300 md:h-16 md:w-24 ${
+                  className={`h-14 w-20 shrink-0 overflow-hidden rounded-xl border transition-all duration-300 md:h-16 md:w-24 ${
                     idx === i ? "border-white opacity-100" : "border-white/10 opacity-50 hover:opacity-90"
                   }`}
                 >
