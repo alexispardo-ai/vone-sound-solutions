@@ -5,14 +5,18 @@ import { AnimatePresence, motion } from "framer-motion";
 import SectionLabel from "@/components/ui/SectionLabel";
 import TextReveal from "@/components/ui/TextReveal";
 import { useLanguage } from "@/components/LanguageProvider";
-import { CASE_STUDIES, WORK_FILTERS } from "@/lib/site";
+import ProjectGallery from "@/components/ProjectGallery";
+import { CASE_STUDIES, WORK_FILTERS, type CaseStudy, type L } from "@/lib/site";
 import { pick } from "@/lib/i18n";
-import { viewportOnce } from "@/lib/motion";
 import { cn } from "@/lib/utils";
+
+const VIEW: L = { es: "Ver galería", en: "View gallery", fr: "Voir la galerie", de: "Galerie ansehen" };
+const PHOTOS: L = { es: "fotos", en: "photos", fr: "photos", de: "Fotos" };
 
 export default function Work() {
   const { lang, ui } = useLanguage();
   const [filter, setFilter] = useState<"all" | "festival" | "private">("all");
+  const [open, setOpen] = useState<CaseStudy | null>(null);
 
   const items = useMemo(
     () =>
@@ -98,13 +102,30 @@ export default function Work() {
                     <h3 className="mt-2 font-display text-4xl font-semibold tracking-tightest md:text-5xl">
                       {item.title}
                     </h3>
+                    <span className="mt-4 inline-flex items-center gap-2 text-sm text-signal-soft">
+                      {pick(VIEW, lang)} · {item.gallery.length} {pick(PHOTOS, lang)}
+                      <span aria-hidden className="transition-transform duration-500 ease-signal group-hover:translate-x-1">
+                        &rarr;
+                      </span>
+                    </span>
                   </div>
                 </div>
+
+                {/* Whole card opens the project gallery */}
+                <button
+                  type="button"
+                  onClick={() => setOpen(item)}
+                  aria-label={`${pick(VIEW, lang)}: ${item.title}`}
+                  data-cursor={pick(VIEW, lang)}
+                  className="absolute inset-0 z-10 rounded-4xl"
+                />
               </motion.article>
             ))}
           </AnimatePresence>
         </motion.div>
       </div>
+
+      <ProjectGallery project={open} onClose={() => setOpen(null)} />
     </section>
   );
 }
