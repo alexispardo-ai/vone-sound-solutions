@@ -81,7 +81,7 @@ export default function CTA() {
             {SITE.address}
           </a>
           <a
-            href="https://www.instagram.com/vone.void/"
+            href="https://www.instagram.com/vone_void/"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 inline-flex items-center gap-2 text-signal-soft transition-colors hover:text-white"
@@ -91,7 +91,7 @@ export default function CTA() {
               <circle cx="12" cy="12" r="4" />
               <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
             </svg>
-            @vone.void
+            @vone_void
           </a>
         </motion.div>
       </div>

@@ -30,7 +30,7 @@ export const SITE = {
     "https://www.google.com/maps/dir//C.+Montevideo,+16,+Cruz+de+Humilladero,+29006+M%C3%A1laga/@36.7132672,-4.4498944,14z",
   location: "Málaga · España",
   social: [
-    { label: "Instagram", href: "https://www.instagram.com/vone.void/" },
+    { label: "Instagram", href: "https://www.instagram.com/vone_void/" },
   ],
   systems: ["Void Incubus", "Arclite", "Nexus"],
 } as const;
