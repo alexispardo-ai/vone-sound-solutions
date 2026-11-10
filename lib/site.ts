@@ -234,7 +234,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     system: "Void Incubus",
     gallery: [
       { src: `${W}/floridance-1.jpg`, caption: { es: "Fuego y público frente al escenario principal.", en: "Flames and crowd in front of the main stage.", fr: "Flammes et public devant la scène principale.", de: "Flammen und Publikum vor der Hauptbühne." } },
-      { src: `${W}/floridance-2.jpg`, caption: { es: "Set al atardecer, con Feel The Frequency en la pantalla.", en: "Sunset set, with Feel The Frequency on the screen.", fr: "Set au coucher du soleil, avec Feel The Frequency à l'écran.", de: "Set bei Sonnenuntergang, mit Feel The Frequency auf dem Screen." } },
+      { src: `${W}/floridance-2.jpg`, caption: { es: "Set al atardecer en Floridance.", en: "Sunset set at Floridance.", fr: "Set au coucher du soleil à Floridance.", de: "Set bei Sonnenuntergang auf dem Floridance." } },
       { src: `${W}/floridance-3.jpg`, caption: { es: "El escenario de noche, con los láseres en marcha.", en: "The stage at night, lasers running.", fr: "La scène de nuit, lasers en marche.", de: "Die Bühne bei Nacht, die Laser laufen." } },
       { src: `${W}/floridance-4.jpg`, caption: { es: "Manos arriba en cabina, entre las columnas LED.", en: "Hands up in the booth, between the LED columns.", fr: "Les mains en l'air en cabine, entre les colonnes LED.", de: "Hände hoch am Pult, zwischen den LED-Säulen." } },
       { src: `${W}/floridance-5.jpg`, caption: { es: "El stack Void ya volado, horas antes del festival.", en: "The Void stack flown, hours before the festival.", fr: "Le stack Void accroché, quelques heures avant le festival.", de: "Der Void-Stack hängt, Stunden vor dem Festival." } },
