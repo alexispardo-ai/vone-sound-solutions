@@ -19,8 +19,10 @@ export const SITE = {
     de: "Offizieller Void Premium Partner · Spanien & Portugal",
   } as L,
   tagline: "Feel The Frequency",
-  // Assumed until the definitive domain is live; update when registered.
-  domain: "https://vibrationalone.com",
+  // Canonical URL for SEO (canonical, sitemap, robots, schema, Open Graph).
+  // vibrationalone.com returns HTTP 500 (Nov 2026), so point Google to the URL
+  // that actually serves the site. Switch back once the real domain is connected.
+  domain: "https://vone-sound-solutions.alexis-pardo.workers.dev",
   email: "jose.hermosin@vibrationalone.com",
   phone: "+34 666 753 484",
   phoneHref: "tel:+34666753484",
