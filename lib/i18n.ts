@@ -22,7 +22,8 @@ export const UI = {
     hero: {
       eyebrow: "Sonido profesional · Powered by VOID Acoustics",
       headline: ["Feel", "The", "Frequency"],
-      sub: "Partner Premium Oficial de Void en España y Portugal. Alquilamos e instalamos los sistemas Incubus, Arclite y Nexus para que tu evento suene como se merece.",
+      sub: "En Vibrational One creamos experiencias sonoras que se sienten, no solo que se escuchan.",
+      sub2: "Como Official Premium Partner de Void Acoustic, llevamos el sonido a otro nivel, combinando tecnología de vanguardia, potencia y precisión para ofrecer experiencias únicas en cada evento.",
       primary: "Ver proyectos",
       secondary: "Pide presupuesto",
       scroll: "Explora",
@@ -68,7 +69,8 @@ export const UI = {
     hero: {
       eyebrow: "Professional sound · Powered by VOID Acoustics",
       headline: ["Feel", "The", "Frequency"],
-      sub: "Official Void Premium Partner in Spain and Portugal. We rent and install the Incubus, Arclite and Nexus systems so your event sounds the way it should.",
+      sub: "At Vibrational One we create sound experiences you feel, not just hear.",
+      sub2: "As Official Premium Partner of Void Acoustic, we take sound to another level, combining cutting-edge technology, power and precision to deliver unique experiences at every event.",
       primary: "See our work",
       secondary: "Request a quote",
       scroll: "Scroll",
@@ -114,7 +116,8 @@ export const UI = {
     hero: {
       eyebrow: "Son professionnel · Powered by VOID Acoustics",
       headline: ["Feel", "The", "Frequency"],
-      sub: "Partenaire Premium Officiel de Void en Espagne et au Portugal. Nous louons et installons les systèmes Incubus, Arclite et Nexus pour que ton événement sonne comme il le mérite.",
+      sub: "Chez Vibrational One, nous créons des expériences sonores qui se ressentent, pas seulement qui s'écoutent.",
+      sub2: "En tant qu'Official Premium Partner de Void Acoustic, nous portons le son à un autre niveau, en alliant technologie de pointe, puissance et précision pour offrir des expériences uniques à chaque événement.",
       primary: "Voir les projets",
       secondary: "Devis gratuit",
       scroll: "Explorer",
@@ -160,7 +163,8 @@ export const UI = {
     hero: {
       eyebrow: "Professioneller Sound · Powered by VOID Acoustics",
       headline: ["Feel", "The", "Frequency"],
-      sub: "Offizieller Void Premium Partner in Spanien und Portugal. Wir vermieten und installieren die Systeme Incubus, Arclite und Nexus, damit dein Event so klingt, wie es soll.",
+      sub: "Bei Vibrational One schaffen wir Klangerlebnisse, die man spürt und nicht nur hört.",
+      sub2: "Als Official Premium Partner von Void Acoustic heben wir den Sound auf ein neues Level und verbinden modernste Technik, Leistung und Präzision zu einzigartigen Erlebnissen bei jedem Event.",
       primary: "Projekte ansehen",
       secondary: "Angebot anfragen",
       scroll: "Entdecken",

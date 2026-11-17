@@ -86,14 +86,15 @@ export default function Hero() {
           ))}
         </motion.h1>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-8 max-w-xl text-lg leading-relaxed text-chalk-muted"
+          className="mt-8 max-w-2xl space-y-3"
         >
-          {ui.hero.sub}
-        </motion.p>
+          <p className="text-xl leading-snug text-white md:text-2xl">{ui.hero.sub}</p>
+          <p className="max-w-xl text-base leading-relaxed text-chalk-muted md:text-lg">{ui.hero.sub2}</p>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
