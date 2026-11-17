@@ -32,15 +32,26 @@ export default function About() {
             />
           </div>
 
-          <div className="flex flex-col justify-end gap-6 lg:col-span-5">
+          <div className="flex flex-col justify-end gap-5 lg:col-span-5">
             <Reveal delay={0.1}>
               <p className="text-lg leading-relaxed text-chalk-muted">{ui.about.p1}</p>
             </Reveal>
-            <Reveal delay={0.2}>
-              <p className="leading-relaxed text-chalk-dim">{ui.about.p2}</p>
-            </Reveal>
+            {[ui.about.p2, ui.about.p3, ui.about.p4].map((p, i) => (
+              <Reveal key={i} delay={0.15 + i * 0.05}>
+                <p className="leading-relaxed text-chalk-dim">{p}</p>
+              </Reveal>
+            ))}
           </div>
         </div>
+
+        <Reveal delay={0.1} className="mt-16 border-t border-white/10 pt-10">
+          <p className="max-w-3xl font-display text-[clamp(1.5rem,3.2vw,2.5rem)] font-semibold leading-[1.15] tracking-editorial">
+            {ui.about.closing}
+          </p>
+          <p className="mt-5 text-xs font-medium uppercase tracking-[0.28em] text-signal-soft">
+            {ui.about.signoff}
+          </p>
+        </Reveal>
 
         {/* Large editorial image band with parallax */}
         <div
