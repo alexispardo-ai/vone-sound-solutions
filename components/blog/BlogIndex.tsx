@@ -21,7 +21,7 @@ export default function BlogIndex({ posts }: { posts: PostMeta[] }) {
   return (
     <section className="container-editorial pb-section pt-40">
       <SectionLabel>{t.label}</SectionLabel>
-      <h1 className="mt-8 max-w-3xl font-display text-[clamp(2.5rem,7vw,5.5rem)] font-semibold leading-[0.95] tracking-tightest">
+      <h1 className="mt-8 max-w-3xl font-display text-[clamp(1.9rem,4.4vw,3.4rem)] leading-[1.12] tracking-brand">
         {t.title}
       </h1>
       <p className="mt-6 max-w-xl text-lg text-chalk-muted">{t.intro}</p>
@@ -63,7 +63,7 @@ export default function BlogIndex({ posts }: { posts: PostMeta[] }) {
                       {p.readingMinutes} {t.min}
                     </span>
                   </div>
-                  <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight md:text-3xl">
+                  <h2 className="mt-4 font-display text-lg tracking-brand md:text-xl">
                     {p.title}
                   </h2>
                   <p className="mt-3 leading-relaxed text-chalk-muted">{p.excerpt}</p>

@@ -23,7 +23,7 @@ export default function Marquee({
         <li
           key={i}
           className={cn(
-            "whitespace-nowrap font-display text-2xl font-medium tracking-tight text-chalk-dim transition-colors duration-300 hover:text-white sm:text-3xl",
+            "whitespace-nowrap font-display text-lg uppercase tracking-[0.08em] text-chalk-dim transition-colors duration-300 hover:text-white sm:text-xl",
             itemClassName
           )}
         >

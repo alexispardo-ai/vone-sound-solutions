@@ -50,16 +50,16 @@ export default function Navbar() {
             scrolled && "glass px-6 py-3"
           )}
         >
-          <Link href={isHome ? "#top" : "/"} aria-label="VONE home" data-cursor="Top">
+          <Link href={isHome ? "#top" : "/"} aria-label="VONE home" data-cursor="Top" className="shrink-0">
             <Logo />
           </Link>
 
-          <nav className="hidden items-center gap-9 lg:flex">
+          <nav className="hidden items-center gap-7 xl:flex">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={anchor(link.href)}
-                className="group relative text-sm tracking-tight text-chalk-muted transition-colors hover:text-white"
+                className="group relative font-display text-[0.66rem] uppercase tracking-[0.06em] text-chalk-muted transition-colors hover:text-white"
               >
                 {pick(link.label, lang)}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-signal transition-all duration-500 ease-signal group-hover:w-full" />
@@ -67,23 +67,23 @@ export default function Navbar() {
             ))}
             <Link
               href="/blog"
-              className="group relative text-sm tracking-tight text-chalk-muted transition-colors hover:text-white"
+              className="group relative font-display text-[0.66rem] uppercase tracking-[0.06em] text-chalk-muted transition-colors hover:text-white"
             >
               {ui.nav.blog}
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-signal transition-all duration-500 ease-signal group-hover:w-full" />
             </Link>
           </nav>
 
-          <div className="hidden items-center gap-4 lg:flex">
+          <div className="hidden shrink-0 items-center gap-4 xl:flex">
             <LanguageToggle />
-            <MagneticButton href={anchor("#contact")} variant="glass" className="px-6 py-3" cursor="Talk">
+            <MagneticButton href={anchor("#contact")} variant="glass" className="whitespace-nowrap px-6 py-3" cursor="Talk">
               {ui.nav.cta}
             </MagneticButton>
           </div>
 
           <button
             onClick={() => setOpen((v) => !v)}
-            className="relative z-[120] flex h-11 w-11 flex-col items-center justify-center gap-1.5 lg:hidden"
+            className="relative z-[120] flex h-11 w-11 flex-col items-center justify-center gap-1.5 xl:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
           >
@@ -110,7 +110,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-[110] flex flex-col justify-center bg-ink-900/95 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-[110] flex flex-col justify-center bg-ink-900/95 backdrop-blur-xl xl:hidden"
           >
             <nav className="container-editorial flex flex-col gap-2">
               {NAV_LINKS.map((link, i) => (
@@ -123,7 +123,7 @@ export default function Navbar() {
                   <Link
                     href={anchor(link.href)}
                     onClick={() => setOpen(false)}
-                    className="block py-2 font-display text-5xl font-semibold tracking-tightest text-white"
+                    className="block py-2 font-display text-2xl tracking-brand text-white"
                   >
                     {pick(link.label, lang)}
                   </Link>
@@ -137,7 +137,7 @@ export default function Navbar() {
                 <Link
                   href="/blog"
                   onClick={() => setOpen(false)}
-                  className="block py-2 font-display text-5xl font-semibold tracking-tightest text-white"
+                  className="block py-2 font-display text-2xl tracking-brand text-white"
                 >
                   {ui.nav.blog}
                 </Link>

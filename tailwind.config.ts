@@ -9,35 +9,40 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // vONE brand manual v2.0: Black Void base, neon as accent.
         ink: {
-          DEFAULT: "#050505",
-          900: "#050505",
-          800: "#111111",
-          700: "#1C1C1C",
-          600: "#242424",
-          500: "#3a3a3a",
+          DEFAULT: "#0A0A0E",
+          900: "#0A0A0E",
+          800: "#101017",
+          700: "#15151F",
+          600: "#1C1C28",
+          500: "#43434F",
         },
         chalk: {
-          DEFAULT: "#FFFFFF",
-          muted: "#D9D9D9",
-          dim: "#8A8A8A",
+          DEFAULT: "#F4F4F7",
+          muted: "#B7B7C4",
+          dim: "#6F6F80",
         },
-        // Discreet brand accent derived from the VONE / VOID magenta glow.
+        // Pulse Magenta (principal)
         signal: {
-          DEFAULT: "#C21A5A",
-          soft: "#E23A78",
-          glow: "#FF2E88",
+          DEFAULT: "#EA00FF",
+          soft: "#F25CFF",
+          glow: "#EA00FF",
         },
+        cyan: { DEFAULT: "#00E2FF" }, // Laser Cyan (apoyo)
+        lime: { DEFAULT: "#A4FF00" }, // Volt Lime (apoyo)
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "SF Pro Display", "Neue Haas Grotesk", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       fontSize: {
         "10xl": ["10rem", { lineHeight: "0.92", letterSpacing: "-0.04em" }],
         "12xl": ["clamp(4rem, 14vw, 15rem)", { lineHeight: "0.88", letterSpacing: "-0.045em" }],
       },
       letterSpacing: {
+        brand: "0.01em",
         tightest: "-0.045em",
         editorial: "-0.03em",
       },

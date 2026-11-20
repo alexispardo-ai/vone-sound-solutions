@@ -28,7 +28,7 @@ export default function About() {
               key={ui.about.heading}
               as="h2"
               text={ui.about.heading}
-              className="font-display text-[clamp(2rem,5vw,4.5rem)] font-semibold leading-[1.02] tracking-editorial"
+              className="font-display text-[clamp(1.6rem,3.2vw,2.6rem)] leading-[1.2] tracking-brand"
             />
           </div>
 
@@ -45,7 +45,7 @@ export default function About() {
         </div>
 
         <Reveal delay={0.1} className="mt-16 border-t border-white/10 pt-10">
-          <p className="max-w-3xl font-display text-[clamp(1.5rem,3.2vw,2.5rem)] font-semibold leading-[1.15] tracking-editorial">
+          <p className="max-w-3xl font-display text-[clamp(1.3rem,2.4vw,2rem)] leading-[1.35] tracking-brand">
             {ui.about.closing}
           </p>
           <p className="mt-5 text-xs font-medium uppercase tracking-[0.28em] text-signal-soft">
@@ -80,7 +80,7 @@ export default function About() {
             <span className="max-w-xs text-sm leading-relaxed text-chalk-muted">
               {ui.about.bandNote}
             </span>
-            <span className="font-display text-5xl font-semibold tracking-tightest text-white/10 md:text-7xl">
+            <span className="font-display text-3xl tracking-brand text-white/10 md:text-5xl">
               {ui.about.bandBig}
             </span>
           </motion.div>

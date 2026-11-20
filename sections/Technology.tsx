@@ -22,7 +22,7 @@ export default function Technology() {
                 key={ui.systems.heading}
                 as="h2"
                 text={ui.systems.heading}
-                className="mt-8 font-display text-[clamp(2rem,5vw,4rem)] font-semibold leading-[1.02] tracking-editorial"
+                className="mt-8 font-display text-[clamp(1.6rem,3.2vw,2.6rem)] leading-[1.2] tracking-brand"
               />
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -71,7 +71,7 @@ export default function Technology() {
                     <div className="flex flex-col gap-4 md:flex-row md:items-baseline md:justify-between">
                       <div className="flex items-baseline gap-4">
                         <span className="font-mono text-sm text-chalk-dim">0{i + 1}</span>
-                        <h3 className="font-display text-3xl font-semibold tracking-tightest md:text-4xl">
+                        <h3 className="font-display text-xl tracking-brand md:text-2xl">
                           {system.name}
                         </h3>
                       </div>

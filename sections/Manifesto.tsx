@@ -17,7 +17,7 @@ export default function Manifesto() {
 
   return (
     <section className="relative overflow-hidden border-t border-white/5 py-section">
-      <div className="pointer-events-none absolute left-1/2 top-0 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(194,26,90,0.1),transparent_65%)] blur-2xl" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(234,0,255,0.1),transparent_65%)] blur-2xl" />
 
       <div className="container-editorial relative">
         <SectionLabel>{ui.manifesto.label}</SectionLabel>
@@ -30,7 +30,7 @@ export default function Manifesto() {
               initial="hidden"
               whileInView="visible"
               viewport={viewportOnce}
-              className="flex max-w-5xl flex-wrap font-display text-[clamp(1.75rem,5vw,4rem)] font-semibold leading-[1.05] tracking-editorial"
+              className="flex max-w-5xl flex-wrap font-display text-[clamp(1.3rem,2.8vw,2.2rem)] leading-[1.35] tracking-brand"
             >
               {pick(line, lang)
                 .split(" ")

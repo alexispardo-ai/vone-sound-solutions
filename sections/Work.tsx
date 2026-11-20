@@ -36,7 +36,7 @@ export default function Work() {
             key={ui.work.heading}
             as="h2"
             text={ui.work.heading}
-            className="max-w-2xl font-display text-[clamp(2rem,5vw,4rem)] font-semibold leading-[1.02] tracking-editorial"
+            className="max-w-2xl font-display text-[clamp(1.6rem,3.2vw,2.6rem)] leading-[1.2] tracking-brand"
           />
 
           <div className="flex flex-wrap gap-2">
@@ -85,7 +85,7 @@ export default function Work() {
                 </div>
                 <div className="absolute inset-0 bg-ink-900/30 transition-colors duration-700 group-hover:bg-ink-900/10" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/30 to-transparent" />
-                <div className="absolute -inset-40 bg-[radial-gradient(circle,rgba(255,46,136,0.14),transparent_60%)] opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+                <div className="absolute -inset-40 bg-[radial-gradient(circle,rgba(234,0,255,0.14),transparent_60%)] opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
 
                 <div className="relative flex h-full flex-col justify-between p-7 md:p-9">
                   <div className="flex items-center justify-between">
@@ -99,7 +99,7 @@ export default function Work() {
 
                   <div>
                     <p className="text-sm text-chalk-dim">{item.client}</p>
-                    <h3 className="mt-2 font-display text-4xl font-semibold tracking-tightest md:text-5xl">
+                    <h3 className="mt-2 font-display text-2xl tracking-brand md:text-3xl">
                       {item.title}
                     </h3>
                     <span className="mt-4 inline-flex items-center gap-2 text-sm text-signal-soft">

@@ -29,7 +29,7 @@ export default function Services() {
               key={ui.services.heading}
               as="h2"
               text={ui.services.heading}
-              className="mt-8 max-w-2xl font-display text-[clamp(2rem,5vw,4rem)] font-semibold leading-[1.02] tracking-editorial"
+              className="mt-8 max-w-2xl font-display text-[clamp(1.6rem,3.2vw,2.6rem)] leading-[1.2] tracking-brand"
             />
           </div>
           <p className="max-w-sm text-chalk-dim">{ui.services.intro}</p>
@@ -68,7 +68,7 @@ export default function Services() {
                 <div className="relative z-10 col-span-10 flex flex-col gap-3 md:col-span-11 md:flex-row md:items-center md:justify-between">
                   <h3
                     className={cn(
-                      "font-display text-3xl font-semibold tracking-tightest transition-transform duration-500 ease-signal md:text-5xl",
+                      "font-display text-xl tracking-brand transition-transform duration-500 ease-signal md:text-3xl",
                       isActive ? "translate-x-2 text-white md:translate-x-4" : "text-chalk-muted"
                     )}
                   >

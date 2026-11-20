@@ -20,7 +20,7 @@ export default function Process() {
               key={ui.process.heading}
               as="h2"
               text={ui.process.heading}
-              className="mt-8 font-display text-[clamp(2rem,5vw,4rem)] font-semibold leading-[1.02] tracking-editorial"
+              className="mt-8 font-display text-[clamp(1.6rem,3.2vw,2.6rem)] leading-[1.2] tracking-brand"
             />
           </div>
           <p className="max-w-sm text-chalk-dim">{ui.process.intro}</p>
@@ -37,11 +37,11 @@ export default function Process() {
               data-cursor={pick(item.title, lang)}
               className="group relative flex min-h-[22rem] flex-col justify-between bg-ink-900 p-8 transition-colors duration-500 hover:bg-ink-800"
             >
-              <span className="font-display text-6xl font-semibold tracking-tightest text-white/10 transition-colors duration-500 group-hover:text-signal/60">
+              <span className="font-display text-4xl tracking-brand text-white/10 transition-colors duration-500 group-hover:text-signal/60">
                 {item.step}
               </span>
               <div>
-                <h3 className="font-display text-2xl font-semibold tracking-tight">{pick(item.title, lang)}</h3>
+                <h3 className="font-display text-base tracking-brand md:text-lg">{pick(item.title, lang)}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-chalk-dim">{pick(item.body, lang)}</p>
               </div>
               <span className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-signal transition-transform duration-500 ease-signal group-hover:scale-x-100" />

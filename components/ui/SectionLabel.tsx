@@ -25,7 +25,7 @@ export default function SectionLabel({
         variants={{ hidden: { scaleX: 0 }, visible: { scaleX: 1 } }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       />
-      <span className="text-xs font-medium uppercase tracking-[0.28em] text-chalk-dim">
+      <span className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-chalk-dim">
         {children}
       </span>
     </motion.div>

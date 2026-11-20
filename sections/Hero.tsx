@@ -25,7 +25,7 @@ export default function Hero() {
       ref={ref}
       className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden"
     >
-      {/* Cinematic video backdrop + Three.js soundfield accent */}
+      {/* Cinematic video backdrop + brand wave engine accent */}
       <motion.div style={{ y, scale }} className="absolute inset-0">
         {/*
           Base layer: drop a cinematic loop at /public/videos/hero.mp4 and it plays here.
@@ -47,7 +47,7 @@ export default function Hero() {
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-ink-900/30 via-ink-900/50 to-ink-900" />
         {/* Soundfield accent on top of the footage */}
-        <WaveField />
+        <WaveField className="absolute inset-0 h-full w-full opacity-75" />
       </motion.div>
 
       {/* Dark overlay for legibility */}
@@ -62,7 +62,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-8 flex items-center gap-4 text-xs font-medium uppercase tracking-[0.28em] text-chalk-muted"
+          className="mb-8 flex items-center gap-4 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-chalk-muted"
         >
           <span className="h-px w-10 bg-signal" />
           {ui.hero.eyebrow}
@@ -72,10 +72,10 @@ export default function Hero() {
           variants={stagger(0.09, 0.5)}
           initial="hidden"
           animate="visible"
-          className="max-w-[15ch] font-display text-[clamp(3rem,11vw,11rem)] font-semibold leading-[0.9] tracking-tightest"
+          className="max-w-[15ch] font-display text-[clamp(2.4rem,7vw,6.5rem)] leading-[1.05] tracking-brand"
         >
           {HEADLINE.map((word, i) => (
-            <span key={i} className="mr-[0.2em] inline-block overflow-hidden pb-[0.08em]">
+            <span key={i} className="mr-[0.2em] inline-block overflow-hidden pb-[0.22em]">
               <motion.span
                 variants={wordReveal}
                 className={i === HEADLINE.length - 1 ? "signal-gradient inline-block" : "inline-block"}
@@ -120,7 +120,7 @@ export default function Hero() {
         transition={{ delay: 1.6, duration: 1 }}
         className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-3 md:flex"
       >
-        <span className="text-[10px] uppercase tracking-[0.3em] text-chalk-dim">{ui.hero.scroll}</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-chalk-dim">{ui.hero.scroll}</span>
         <span className="relative flex h-12 w-6 justify-center overflow-hidden rounded-full border border-white/20">
           <motion.span
             className="mt-1 h-2 w-1 rounded-full bg-signal"

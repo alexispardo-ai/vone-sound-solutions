@@ -12,7 +12,7 @@ export default function CTA() {
 
   return (
     <section id="contact" className="relative overflow-hidden py-section">
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[60rem] w-[60rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(194,26,90,0.16),transparent_60%)] blur-2xl" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[60rem] w-[60rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(234,0,255,0.16),transparent_60%)] blur-2xl" />
 
       <div className="container-editorial relative text-center">
         <motion.h2
@@ -20,7 +20,7 @@ export default function CTA() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="mx-auto flex max-w-5xl flex-wrap justify-center font-display text-[clamp(2.5rem,9vw,8rem)] font-semibold leading-[0.95] tracking-tightest"
+          className="mx-auto flex max-w-5xl flex-wrap justify-center font-display text-[clamp(1.9rem,5vw,4.2rem)] leading-[1.1] tracking-brand"
         >
           {LINE.map((word, i) => (
             <span key={i} className="mr-[0.25em] inline-block overflow-hidden pb-[0.08em]">

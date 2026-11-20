@@ -15,9 +15,9 @@ export default function Footer() {
           <div className="md:col-span-5">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo-full.png"
-              alt="VONE · Vibrational One · Sound Solutions · Powered by VOID Acoustic"
-              className="w-[220px] max-w-full select-none"
+              src="/brand/vONE_principal_descriptor_blanco.svg"
+              alt="vONE · Feel the Frequency"
+              className="h-8 w-auto max-w-full select-none"
               draggable={false}
             />
             <p className="mt-6 max-w-sm leading-relaxed text-chalk-dim">{ui.about.p1}</p>
@@ -70,8 +70,8 @@ export default function Footer() {
 
         {/* Oversized wordmark */}
         <div className="mt-20 select-none overflow-hidden">
-          <p className="font-display text-[clamp(4rem,20vw,18rem)] font-semibold leading-[0.8] tracking-tightest text-white/[0.04]">
-            VONE
+          <p className="font-display text-[clamp(3rem,15vw,13rem)] leading-[0.9] tracking-brand text-white/[0.04]">
+            vONE
           </p>
         </div>
 

@@ -3,11 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --bg: #050505;
-  --bg-elev: #111111;
+  --bg: #0a0a0e;
+  --bg-elev: #101017;
   --line: rgba(255, 255, 255, 0.08);
-  --signal: #c21a5a;
-  --signal-glow: #ff2e88;
+  --signal: #ea00ff;
+  --signal-glow: #ea00ff;
+  --cyan: #00e2ff;
+  --lime: #a4ff00;
 }
 
 @layer base {
@@ -85,6 +87,9 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    /* extend the painted box so descenders (the y in Frequency) keep their fill */
+    padding-bottom: 0.18em;
+    margin-bottom: -0.18em;
   }
 
   .divider {
@@ -110,7 +115,7 @@
   width: 9px;
 }
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #0a0a0e;
 }
 ::-webkit-scrollbar-thumb {
   background: #1c1c1c;
@@ -170,8 +175,8 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.6),
     inset 0 -1px 0 rgba(255, 255, 255, 0.1),
     inset 0 0 22px rgba(255, 255, 255, 0.08),
-    0 0 0 1px rgba(255, 46, 136, 0.15),
-    0 14px 40px -12px rgba(194, 26, 90, 0.55);
+    0 0 0 1px rgba(234, 0, 255, 0.15),
+    0 14px 40px -12px rgba(234, 0, 255, 0.55);
 }
 .liquid-glass:hover::before {
   opacity: 1;

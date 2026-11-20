@@ -1,129 +1,125 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import * as THREE from "three";
 
 /**
- * A lightweight Three.js "audio wave" field for the hero backdrop.
- * A grid of points ripples like a soundfield, on-brand for an audio company,
- * and cheap enough to run smoothly on the hero without a physics/particle library.
+ * vONE "Motor de Ondas" from the brand manual (§06): generative vertical
+ * capsules that vibrate, blended across Pulse Magenta, Laser Cyan and Volt
+ * Lime, with a neon glow on Black Void. Ported from the manual's waves.js.
+ * Respects prefers-reduced-motion (single static frame) and pauses offscreen.
  */
-export default function WaveField() {
-  const mount = useRef<HTMLDivElement>(null);
+const PALETTE = ["#ea00ff", "#00e2ff", "#a4ff00"];
+
+function hexToRgb(h: string): [number, number, number] {
+  const n = parseInt(h.slice(1), 16);
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+
+function colorAt(t: number) {
+  const seg = t * (PALETTE.length - 1);
+  const i = Math.min(PALETTE.length - 2, Math.floor(seg));
+  const f = seg - i;
+  const a = hexToRgb(PALETTE[i]);
+  const b = hexToRgb(PALETTE[i + 1]);
+  return `rgb(${Math.round(a[0] + (b[0] - a[0]) * f)},${Math.round(a[1] + (b[1] - a[1]) * f)},${Math.round(a[2] + (b[2] - a[2]) * f)})`;
+}
+
+export default function WaveField({
+  density = 72,
+  amp = 0.85,
+  className = "absolute inset-0 h-full w-full",
+}: {
+  density?: number;
+  amp?: number;
+  className?: string;
+}) {
+  const ref = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const el = mount.current;
-    if (!el) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const canvas = ref.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(60, el.clientWidth / el.clientHeight, 0.1, 100);
-    camera.position.set(0, 2.4, 6);
-    camera.lookAt(0, 0, 0);
+    let W = 1, H = 1, raf = 0, time = 0, visible = true;
+    let bars: { t: number; phase: number; freq: number; env: number; color: string }[] = [];
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setSize(el.clientWidth, el.clientHeight);
-    el.appendChild(renderer.domElement);
-
-    // Grid of points
-    const COLS = 90;
-    const ROWS = 42;
-    const GAP = 0.22;
-    const count = COLS * ROWS;
-    const positions = new Float32Array(count * 3);
-    let i = 0;
-    for (let x = 0; x < COLS; x++) {
-      for (let z = 0; z < ROWS; z++) {
-        positions[i++] = (x - COLS / 2) * GAP;
-        positions[i++] = 0;
-        positions[i++] = (z - ROWS / 2) * GAP;
-      }
-    }
-
-    const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-
-    const material = new THREE.PointsMaterial({
-      color: new THREE.Color("#C21A5A"),
-      size: 0.032,
-      transparent: true,
-      opacity: 0.9,
-      sizeAttenuation: true,
-    });
-
-    const points = new THREE.Points(geometry, material);
-    scene.add(points);
-
-    // Subtle white points overlay for depth
-    const material2 = new THREE.PointsMaterial({
-      color: new THREE.Color("#ffffff"),
-      size: 0.015,
-      transparent: true,
-      opacity: 0.35,
-    });
-    const points2 = new THREE.Points(geometry.clone(), material2);
-    scene.add(points2);
-
-    let mouseX = 0;
-    const onMove = (e: MouseEvent) => {
-      mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+    const resize = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const r = canvas.getBoundingClientRect();
+      W = Math.max(1, r.width);
+      H = Math.max(1, r.height);
+      canvas.width = W * dpr;
+      canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      // fewer bars on narrow screens so each one keeps its weight
+      const n = W < 640 ? Math.round(density * 0.55) : density;
+      bars = Array.from({ length: n }, (_, i) => {
+        const t = i / (n - 1);
+        return {
+          t,
+          phase: t * Math.PI * 2 * 1.5,
+          freq: 0.6 + Math.sin(t * Math.PI) * 0.9,
+          env: 0.18 + Math.pow(Math.sin(t * Math.PI), 1.2) * 0.82,
+          color: colorAt(t),
+        };
+      });
     };
-    window.addEventListener("mousemove", onMove);
 
-    const clock = new THREE.Clock();
-    let raf = 0;
-
-    const animate = () => {
-      const t = clock.getElapsedTime();
-      const pos = geometry.attributes.position as THREE.BufferAttribute;
-      let idx = 0;
-      for (let x = 0; x < COLS; x++) {
-        for (let z = 0; z < ROWS; z++) {
-          const px = (x - COLS / 2) * GAP;
-          const pz = (z - ROWS / 2) * GAP;
-          const d = Math.sqrt(px * px + pz * pz);
-          const y =
-            Math.sin(d * 1.6 - t * 1.8) * 0.28 +
-            Math.sin(px * 0.6 + t * 0.9) * 0.12;
-          pos.setY(idx, y);
-          idx++;
-        }
+    const draw = () => {
+      time += 0.018;
+      ctx.clearRect(0, 0, W, H);
+      const gap = W / bars.length;
+      const barW = Math.max(2, gap * 0.42);
+      const mid = H * 0.5;
+      ctx.shadowBlur = 16;
+      for (let i = 0; i < bars.length; i++) {
+        const bar = bars[i];
+        const wob = Math.sin(time * bar.freq + bar.phase) + 0.4 * Math.sin(time * bar.freq * 2.3 + bar.phase * 1.7);
+        const h = (0.12 + Math.abs(wob) * 0.5 * amp) * bar.env * H;
+        const x = i * gap + (gap - barW) / 2;
+        const y = mid - h / 2;
+        const r = barW / 2;
+        ctx.fillStyle = bar.color;
+        ctx.shadowColor = bar.color;
+        ctx.beginPath();
+        ctx.moveTo(x, y + r);
+        ctx.arc(x + r, y + r, r, Math.PI, 0);
+        ctx.lineTo(x + barW, y + h - r);
+        ctx.arc(x + r, y + h - r, r, 0, Math.PI);
+        ctx.closePath();
+        ctx.fill();
       }
-      pos.needsUpdate = true;
-      (points2.geometry.attributes.position as THREE.BufferAttribute).copy(pos);
-      points2.geometry.attributes.position.needsUpdate = true;
-
-      // Gentle parallax toward the cursor
-      const targetRotY = mouseX * 0.25;
-      points.rotation.y += (targetRotY - points.rotation.y) * 0.04;
-      points2.rotation.y = points.rotation.y;
-
-      renderer.render(scene, camera);
-      raf = requestAnimationFrame(animate);
+      ctx.shadowBlur = 0;
     };
-    animate();
 
+    const loop = () => {
+      if (visible) draw();
+      raf = requestAnimationFrame(loop);
+    };
+
+    resize();
+    draw();
+    if (!reduce) raf = requestAnimationFrame(loop);
+
+    const io = new IntersectionObserver(([e]) => (visible = e.isIntersecting));
+    io.observe(canvas);
+    let rt: ReturnType<typeof setTimeout>;
     const onResize = () => {
-      if (!el) return;
-      camera.aspect = el.clientWidth / el.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(el.clientWidth, el.clientHeight);
+      clearTimeout(rt);
+      rt = setTimeout(() => {
+        resize();
+        draw();
+      }, 120);
     };
     window.addEventListener("resize", onResize);
-
     return () => {
       cancelAnimationFrame(raf);
-      window.removeEventListener("mousemove", onMove);
+      io.disconnect();
       window.removeEventListener("resize", onResize);
-      geometry.dispose();
-      material.dispose();
-      material2.dispose();
-      points2.geometry.dispose();
-      renderer.dispose();
-      if (renderer.domElement.parentNode === el) el.removeChild(renderer.domElement);
     };
-  }, []);
+  }, [density, amp]);
 
-  return <div ref={mount} className="absolute inset-0 h-full w-full" aria-hidden />;
+  return <canvas ref={ref} className={className} aria-hidden />;
 }

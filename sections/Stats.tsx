@@ -19,7 +19,7 @@ function Stat({ value, suffix, label, index }: { value: number; suffix: string; 
     >
       <span
         ref={ref}
-        className="font-display text-[clamp(3rem,7vw,6.5rem)] font-semibold leading-none tracking-tightest"
+        className="font-display text-[clamp(2rem,4.2vw,3.6rem)] leading-none tracking-brand"
       >
         {current.toLocaleString()}
         <span className="text-signal">{suffix}</span>

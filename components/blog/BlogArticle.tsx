@@ -38,7 +38,7 @@ export default function BlogArticle({ post }: { post: Post }) {
             </span>
           ))}
         </div>
-        <h1 className="mt-6 font-display text-[clamp(2rem,6vw,4.25rem)] font-semibold leading-[1.02] tracking-tightest">
+        <h1 className="mt-6 font-display text-[clamp(1.6rem,3.4vw,2.8rem)] leading-[1.18] tracking-brand">
           {post.title}
         </h1>
         <p className="mt-4 text-sm text-chalk-dim">{post.author}</p>

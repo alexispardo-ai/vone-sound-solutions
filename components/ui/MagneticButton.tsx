@@ -28,10 +28,10 @@ export default function MagneticButton({
   const magnetic = useMagnetic<HTMLSpanElement>(0.4);
 
   const base =
-    "group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full px-8 py-4 text-sm font-medium tracking-tight transition-colors duration-500 ease-signal will-change-transform";
+    "group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full px-8 py-4 font-display text-[0.7rem] uppercase tracking-[0.08em] transition-[color,background-color,box-shadow,border-color] duration-500 ease-signal will-change-transform";
 
   const variants = {
-    solid: "bg-white text-ink-900 hover:bg-signal hover:text-white",
+    solid: "bg-signal text-white shadow-[0_0_0_rgba(234,0,255,0)] hover:shadow-[0_0_24px_rgba(234,0,255,0.55),0_0_4px_rgba(234,0,255,0.8)]",
     outline: "border border-white/20 text-white hover:border-white/60",
     ghost: "text-white/80 hover:text-white",
     glass: "liquid-glass",

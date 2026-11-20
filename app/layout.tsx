@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Michroma, IBM_Plex_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
@@ -12,17 +12,24 @@ import { SITE } from "@/lib/site";
 const SITE_DESCRIPTION =
   "VONE · Vibrational One, Partner Premium Oficial de Void Acoustics en España y Portugal. Alquiler e instalación de sistemas de sonido Void Incubus, Arclite y Nexus para festivales, eventos, clubs y restaurantes.";
 
+// vONE brand manual: Michroma (display), Inter (text), IBM Plex Mono (data/labels).
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
 });
 
-// Reuse Inter for the display slot too (tight, editorial weights).
-const display = Inter({
+const display = Michroma({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: "400",
   variable: "--font-display",
+  display: "swap",
+});
+
+const mono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -73,7 +80,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#050505",
+  themeColor: "#0A0A0E",
   colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
@@ -101,7 +108,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${inter.variable} ${display.variable}`}>
+    <html lang="es" className={`${inter.variable} ${display.variable} ${mono.variable}`}>
       <body className="grain relative bg-ink-900 font-sans text-white antialiased">
         <script
           type="application/ld+json"
